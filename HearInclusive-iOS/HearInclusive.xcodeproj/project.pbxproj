@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED0EC0162858E895003839E3 /* CaptureFolderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC0152858E895003839E3 /* CaptureFolderState.swift */; };
+		ED0EC0182858E947003839E3 /* SignTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC0172858E947003839E3 /* SignTableViewController.swift */; };
+		ED0EC01A2858ECBE003839E3 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC0192858ECBE003839E3 /* PreviewViewController.swift */; };
+		ED0EC01C2858EF73003839E3 /* PreviewViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC01B2858EF73003839E3 /* PreviewViewCell.swift */; };
+		ED8BE07827477FD200DCED51 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BE07727477FD200DCED51 /* AnnouncementViewController.swift */; };
+		ED8BE07A2747828600DCED51 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BE0792747828600DCED51 /* SpeechManager.swift */; };
+		ED8BE07C2747911E00DCED51 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BE07B2747911E00DCED51 /* UIViewController.swift */; };
+		ED8BE0802747956600DCED51 /* PAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BE07F2747956500DCED51 /* PAViewController.swift */; };
+		ED8BE0822747961400DCED51 /* sign.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED8BE0812747961400DCED51 /* sign.mp4 */; };
+		ED8BE08427479E8D00DCED51 /* ScanToSignLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BE08327479E8D00DCED51 /* ScanToSignLanguageViewController.swift */; };
+		ED8BE0882747BDC900DCED51 /* ShortFilmV1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED8BE0872747BDC900DCED51 /* ShortFilmV1.mp4 */; };
+		ED8BE08A2747BDDC00DCED51 /* InflightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BE0892747BDDC00DCED51 /* InflightViewController.swift */; };
+		ED8BE0912747C60200DCED51 /* part12.mov in Resources */ = {isa = PBXBuildFile; fileRef = ED8BE08F2747C60100DCED51 /* part12.mov */; };
+		ED8BE0922747C60200DCED51 /* part22.mov in Resources */ = {isa = PBXBuildFile; fileRef = ED8BE0902747C60100DCED51 /* part22.mov */; };
+		EDDBE2D92740BA6000929EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2D82740BA6000929EAC /* AppDelegate.swift */; };
+		EDDBE2DB2740BA6000929EAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2DA2740BA6000929EAC /* SceneDelegate.swift */; };
+		EDDBE2DD2740BA6000929EAC /* SignLangRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2DC2740BA6000929EAC /* SignLangRecorderViewController.swift */; };
+		EDDBE2E02740BA6100929EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDDBE2DE2740BA6100929EAC /* Main.storyboard */; };
+		EDDBE2E22740BA6200929EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDDBE2E12740BA6200929EAC /* Assets.xcassets */; };
+		EDDBE2E52740BA6200929EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDDBE2E32740BA6200929EAC /* LaunchScreen.storyboard */; };
+		EDDBE2F12740BA9800929EAC /* AVCaptureVideoOrientation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2EE2740BA9800929EAC /* AVCaptureVideoOrientation+Extension.swift */; };
+		EDDBE2F22740BA9800929EAC /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2EF2740BA9800929EAC /* VideoCapture.swift */; };
+		EDDBE2F42740BAD400929EAC /* CGImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2F32740BAD400929EAC /* CGImageExt.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ED0EC0152858E895003839E3 /* CaptureFolderState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureFolderState.swift; sourceTree = "<group>"; };
+		ED0EC0172858E947003839E3 /* SignTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignTableViewController.swift; sourceTree = "<group>"; };
+		ED0EC0192858ECBE003839E3 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		ED0EC01B2858EF73003839E3 /* PreviewViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewCell.swift; sourceTree = "<group>"; };
+		ED8BE07727477FD200DCED51 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
+		ED8BE0792747828600DCED51 /* SpeechManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
+		ED8BE07B2747911E00DCED51 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		ED8BE07F2747956500DCED51 /* PAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAViewController.swift; sourceTree = "<group>"; };
+		ED8BE0812747961400DCED51 /* sign.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sign.mp4; sourceTree = "<group>"; };
+		ED8BE08327479E8D00DCED51 /* ScanToSignLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanToSignLanguageViewController.swift; sourceTree = "<group>"; };
+		ED8BE0872747BDC900DCED51 /* ShortFilmV1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShortFilmV1.mp4; sourceTree = "<group>"; };
+		ED8BE0892747BDDC00DCED51 /* InflightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflightViewController.swift; sourceTree = "<group>"; };
+		ED8BE08F2747C60100DCED51 /* part12.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = part12.mov; sourceTree = "<group>"; };
+		ED8BE0902747C60100DCED51 /* part22.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = part22.mov; sourceTree = "<group>"; };
+		EDDBE2D52740BA6000929EAC /* HearInclusive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HearInclusive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDDBE2D82740BA6000929EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDDBE2DA2740BA6000929EAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EDDBE2DC2740BA6000929EAC /* SignLangRecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLangRecorderViewController.swift; sourceTree = "<group>"; };
+		EDDBE2DF2740BA6100929EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDDBE2E12740BA6200929EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDDBE2E42740BA6200929EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDDBE2E62740BA6200929EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDDBE2EE2740BA9800929EAC /* AVCaptureVideoOrientation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVCaptureVideoOrientation+Extension.swift"; sourceTree = "<group>"; };
+		EDDBE2EF2740BA9800929EAC /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		EDDBE2F32740BAD400929EAC /* CGImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImageExt.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDDBE2D22740BA6000929EAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED8BE0852747B55400DCED51 /* PA */ = {
+			isa = PBXGroup;
+			children = (
+				ED8BE07727477FD200DCED51 /* AnnouncementViewController.swift */,
+				ED8BE07F2747956500DCED51 /* PAViewController.swift */,
+			);
+			path = PA;
+			sourceTree = "<group>";
+		};
+		ED8BE0862747BD9400DCED51 /* InflightMedia */ = {
+			isa = PBXGroup;
+			children = (
+				ED8BE0892747BDDC00DCED51 /* InflightViewController.swift */,
+			);
+			path = InflightMedia;
+			sourceTree = "<group>";
+		};
+		ED8BE0932747C75300DCED51 /* TextToSignLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				ED8BE08327479E8D00DCED51 /* ScanToSignLanguageViewController.swift */,
+			);
+			path = TextToSignLanguage;
+			sourceTree = "<group>";
+		};
+		EDDBE2CC2740BA6000929EAC = {
+			isa = PBXGroup;
+			children = (
+				EDDBE2D72740BA6000929EAC /* FlyInclusiveSignLangRecordApp */,
+				EDDBE2D62740BA6000929EAC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDDBE2D62740BA6000929EAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDDBE2D52740BA6000929EAC /* HearInclusive.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDDBE2D72740BA6000929EAC /* FlyInclusiveSignLangRecordApp */ = {
+			isa = PBXGroup;
+			children = (
+				EDDBE2EC2740BA8D00929EAC /* 3rd Party Resource */,
+				ED8BE0932747C75300DCED51 /* TextToSignLanguage */,
+				ED8BE0862747BD9400DCED51 /* InflightMedia */,
+				ED8BE0852747B55400DCED51 /* PA */,
+				EDDBE2D82740BA6000929EAC /* AppDelegate.swift */,
+				EDDBE2DA2740BA6000929EAC /* SceneDelegate.swift */,
+				EDDBE2DC2740BA6000929EAC /* SignLangRecorderViewController.swift */,
+				ED0EC0152858E895003839E3 /* CaptureFolderState.swift */,
+				ED8BE0812747961400DCED51 /* sign.mp4 */,
+				ED8BE0872747BDC900DCED51 /* ShortFilmV1.mp4 */,
+				ED8BE08F2747C60100DCED51 /* part12.mov */,
+				ED8BE0902747C60100DCED51 /* part22.mov */,
+				EDDBE2DE2740BA6100929EAC /* Main.storyboard */,
+				EDDBE2E12740BA6200929EAC /* Assets.xcassets */,
+				EDDBE2E32740BA6200929EAC /* LaunchScreen.storyboard */,
+				EDDBE2E62740BA6200929EAC /* Info.plist */,
+				ED8BE07B2747911E00DCED51 /* UIViewController.swift */,
+				ED0EC0172858E947003839E3 /* SignTableViewController.swift */,
+				ED0EC0192858ECBE003839E3 /* PreviewViewController.swift */,
+				ED0EC01B2858EF73003839E3 /* PreviewViewCell.swift */,
+			);
+			path = FlyInclusiveSignLangRecordApp;
+			sourceTree = "<group>";
+		};
+		EDDBE2EC2740BA8D00929EAC /* 3rd Party Resource */ = {
+			isa = PBXGroup;
+			children = (
+				EDDBE2F32740BAD400929EAC /* CGImageExt.swift */,
+				ED8BE0792747828600DCED51 /* SpeechManager.swift */,
+				EDDBE2EE2740BA9800929EAC /* AVCaptureVideoOrientation+Extension.swift */,
+				EDDBE2EF2740BA9800929EAC /* VideoCapture.swift */,
+			);
+			path = "3rd Party Resource";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDDBE2D42740BA6000929EAC /* HearInclusive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDDBE2E92740BA6200929EAC /* Build configuration list for PBXNativeTarget "HearInclusive" */;
+			buildPhases = (
+				EDDBE2D12740BA6000929EAC /* Sources */,
+				EDDBE2D22740BA6000929EAC /* Frameworks */,
+				EDDBE2D32740BA6000929EAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HearInclusive;
+			productName = FlyInclusiveSignLangRecordApp;
+			productReference = EDDBE2D52740BA6000929EAC /* HearInclusive.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDDBE2CD2740BA6000929EAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					EDDBE2D42740BA6000929EAC = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = EDDBE2D02740BA6000929EAC /* Build configuration list for PBXProject "HearInclusive" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDDBE2CC2740BA6000929EAC;
+			productRefGroup = EDDBE2D62740BA6000929EAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDDBE2D42740BA6000929EAC /* HearInclusive */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDDBE2D32740BA6000929EAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDDBE2E52740BA6200929EAC /* LaunchScreen.storyboard in Resources */,
+				ED8BE0912747C60200DCED51 /* part12.mov in Resources */,
+				EDDBE2E22740BA6200929EAC /* Assets.xcassets in Resources */,
+				ED8BE0882747BDC900DCED51 /* ShortFilmV1.mp4 in Resources */,
+				ED8BE0822747961400DCED51 /* sign.mp4 in Resources */,
+				EDDBE2E02740BA6100929EAC /* Main.storyboard in Resources */,
+				ED8BE0922747C60200DCED51 /* part22.mov in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDDBE2D12740BA6000929EAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDDBE2F42740BAD400929EAC /* CGImageExt.swift in Sources */,
+				ED0EC0162858E895003839E3 /* CaptureFolderState.swift in Sources */,
+				ED8BE0802747956600DCED51 /* PAViewController.swift in Sources */,
+				ED8BE08427479E8D00DCED51 /* ScanToSignLanguageViewController.swift in Sources */,
+				ED8BE07A2747828600DCED51 /* SpeechManager.swift in Sources */,
+				ED8BE07C2747911E00DCED51 /* UIViewController.swift in Sources */,
+				EDDBE2DD2740BA6000929EAC /* SignLangRecorderViewController.swift in Sources */,
+				EDDBE2D92740BA6000929EAC /* AppDelegate.swift in Sources */,
+				ED0EC01A2858ECBE003839E3 /* PreviewViewController.swift in Sources */,
+				ED8BE08A2747BDDC00DCED51 /* InflightViewController.swift in Sources */,
+				ED8BE07827477FD200DCED51 /* AnnouncementViewController.swift in Sources */,
+				ED0EC0182858E947003839E3 /* SignTableViewController.swift in Sources */,
+				EDDBE2DB2740BA6000929EAC /* SceneDelegate.swift in Sources */,
+				ED0EC01C2858EF73003839E3 /* PreviewViewCell.swift in Sources */,
+				EDDBE2F22740BA9800929EAC /* VideoCapture.swift in Sources */,
+				EDDBE2F12740BA9800929EAC /* AVCaptureVideoOrientation+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EDDBE2DE2740BA6100929EAC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDDBE2DF2740BA6100929EAC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EDDBE2E32740BA6200929EAC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDDBE2E42740BA6200929EAC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDDBE2E72740BA6200929EAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDDBE2E82740BA6200929EAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDDBE2EA2740BA6200929EAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G747L87TGJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlyInclusiveSignLangRecordApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Use camera to capture the sign language";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Use Mic";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "For storing video";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "For storing video";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Use Speech Recognition";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hackathon.FlyInclusiveSignLangRecordApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDDBE2EB2740BA6200929EAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G747L87TGJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlyInclusiveSignLangRecordApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Use camera to capture the sign language";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Use Mic";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "For storing video";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "For storing video";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Use Speech Recognition";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hackathon.FlyInclusiveSignLangRecordApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDDBE2D02740BA6000929EAC /* Build configuration list for PBXProject "HearInclusive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDDBE2E72740BA6200929EAC /* Debug */,
+				EDDBE2E82740BA6200929EAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDDBE2E92740BA6200929EAC /* Build configuration list for PBXNativeTarget "HearInclusive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDDBE2EA2740BA6200929EAC /* Debug */,
+				EDDBE2EB2740BA6200929EAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDDBE2CD2740BA6000929EAC /* Project object */;
+}
