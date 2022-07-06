@@ -10,7 +10,7 @@ import UIKit
 import UIKit
 import Vision
 import ReplayKit
-class SignLangRecorderViewController : UIViewController, UITextFieldDelegate, RPPreviewViewControllerDelegate {
+class SLRecordingViewController : UIViewController, UITextFieldDelegate, RPPreviewViewControllerDelegate {
 
     var imageViews : [UIImageView] = []
 
@@ -18,14 +18,168 @@ class SignLangRecorderViewController : UIViewController, UITextFieldDelegate, RP
     let recorder = RPScreenRecorder.shared()
     
     
+    @IBOutlet var cameraImage : UIImageView?
+    @IBOutlet var cameraLabel : UILabel?
+    
     @IBOutlet var textField : UITextField?
     @IBOutlet var statusLabel : UILabel?
+    
+    @IBOutlet var collectionView : UICollectionView?
+    
+    var words : [String] = ["我", "想", "食", "漢堡"]
+    
+    
+    @IBOutlet var recordButton : UIButton?
+    @IBOutlet var playButton : UIButton?
+    @IBOutlet var switchCamerButton : UIButton?
+    @IBOutlet var nextButton : UIButton?
+    
+    var isPlaybackMode = false {
+        didSet {
+            if isPlaybackMode == true {
+                
+                self.cameraLabel?.isEnabled = false
+                
+                self.nextButton?.isEnabled = SLRecordingManager.shared.wordList.count > 1
+                self.switchCamerButton?.isEnabled = false
+                self.playbackImageView.isHidden = false
+                
+                self.recordButton?.setImage(UIImage(systemName: "camera.fill"), for: .normal)
+                
+                cameraLabel?.text = "PLAYBACK"
+                cameraImage?.image = UIImage(systemName: "play.rectangle.fill")
+            } else {
+                self.switchCamerButton?.isEnabled = true
+                self.nextButton?.isEnabled = SLRecordingManager.shared.wordList.count > 1
+                let currentKey = SLRecordingManager.shared.currentKey
+                self.playButton?.isEnabled = SLRecordingManager.shared.hasRecord(word: currentKey)
+                
+                self.playbackImageView.isHidden = true
+                
+                self.recordButton?.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+                
+                cameraImage?.image = UIImage(systemName: "camera.fill")
+                cameraLabel?.text = (videoCapture.cameraPostion == .front) ? "FRONT CAMERA" : "BACK CAMERA"
+            }
+        }
+    }
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        SLPlayer.shared.delegate = self
+        SLRecordingManager.shared.prepare(for: self.words)
+        
+        self.collectionView?.allowsSelection = true
+        self.collectionView?.allowsMultipleSelection = false
+        
+        setupAndBeginCapturingVideoFrames()
+    }
+    
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        // Reinitilize the camera to update its output stream with the new orientation.
+        setupAndBeginCapturingVideoFrames()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.previewImageView.backgroundColor = .white
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+
+        let indexPath = IndexPath(item: SLRecordingManager.shared.currentIndex, section: 0)
+        self.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+        let cell = self.collectionView(self.collectionView!, cellForItemAt: indexPath)
+        cell.isSelected = true
+        self.collectionView(self.collectionView!, didSelectItemAt: indexPath)
+        
+        if SLRecordingManager.shared.wordList.count > 1 {
+            self.nextButton?.isEnabled = true
+        } else {
+            self.nextButton?.isEnabled = false
+            self.nextButton?.tintColor = .lightGray
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        videoCapture.stopCapturing {
+            super.viewWillDisappear(animated)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
     
+    @IBAction func nextButtonClicked(_ sender : Any){
+        let index = SLRecordingManager.shared.next()
+        let indexPath = IndexPath(item: index, section: 0)
+
+        self.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+        let cell = self.collectionView(self.collectionView!, cellForItemAt: indexPath)
+        cell.isSelected = true
+        self.collectionView(self.collectionView!, didSelectItemAt: indexPath)
+    }
+    
+    @IBAction func playButtonClicked(_ sender : Any){
+        guard let frames = SLRecordingManager.shared.repository[SLRecordingManager.shared.currentKey] else {
+            return
+        }
+        
+        isPlaybackMode = true
+        SLPlayer.shared.play(frames: frames)
+    }
+    
     @IBAction func recordButtonClick(_ sender : Any){
+        
+        if isPlaybackMode == true {
+            SLPlayer.shared.stop()
+            isPlaybackMode = false
+            return
+        }
+        
+        if SLRecordingManager.shared.isRecording {
+            self.switchCamerButton?.isEnabled = true
+            self.nextButton?.isEnabled = SLRecordingManager.shared.wordList.count > 1
+            let currentKey = SLRecordingManager.shared.currentKey
+            self.playButton?.isEnabled = SLRecordingManager.shared.hasRecord(word: currentKey)
+            
+            SLRecordingManager.shared.stop()
+            UIView.animate(withDuration: 0.3, animations: {
+                self.recordButton?.backgroundColor = #colorLiteral(red: 0.08724250644, green: 0.192432791, blue: 0.4109585583, alpha: 1)
+                let image = UIImage(systemName: "circle.fill")
+                self.recordButton?.setImage(image, for: .normal)
+            })
+            
+            
+        } else {
+            self.switchCamerButton?.isEnabled = false
+            self.nextButton?.isEnabled = SLRecordingManager.shared.wordList.count > 1
+            self.playButton?.isEnabled = false
+            SLRecordingManager.shared.record()
+            UIView.animate(withDuration: 0.3, animations: {
+                self.recordButton?.backgroundColor = #colorLiteral(red: 0.7379922271, green: 0.1371690035, blue: 0.1375864148, alpha: 1)
+                let image = UIImage(systemName: "square.fill")
+                self.recordButton?.setImage(image, for: .normal)
+            })
+        }
+        
+        return
         
         guard textField!.text?.isEmpty == false else {
             self.statusLabel?.text = "The textfield is empty"
@@ -106,6 +260,7 @@ class SignLangRecorderViewController : UIViewController, UITextFieldDelegate, RP
     }
 
     @IBOutlet weak var previewImageView : UIImageView!
+    @IBOutlet weak var playbackImageView : UIImageView!
     
     
     var imageSize = CGSize.zero
@@ -114,48 +269,21 @@ class SignLangRecorderViewController : UIViewController, UITextFieldDelegate, RP
     
     private var currentFrame: CGImage?
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
-        
-        setupAndBeginCapturingVideoFrames()
-    }
-    
-    override func viewWillTransition(to size: CGSize,
-                                     with coordinator: UIViewControllerTransitionCoordinator) {
-        // Reinitilize the camera to update its output stream with the new orientation.
-        setupAndBeginCapturingVideoFrames()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        self.previewImageView.backgroundColor = .white
-        
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        videoCapture.stopCapturing {
-            super.viewWillDisappear(animated)
-        }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
 
 
     @IBAction func switchCamera(){
         self.videoCapture.flipCamera(completion: {
             error in
+            
+            DispatchQueue.main.async {
+                
+                if self.videoCapture.cameraPostion == .front {
+                    self.cameraLabel?.text = "FRONT CAMERA"
+                } else {
+                    self.cameraLabel?.text = "BACK CAMERA"
+                }
+                
+            }
         })
     }
 
@@ -178,6 +306,16 @@ class SignLangRecorderViewController : UIViewController, UITextFieldDelegate, RP
         videoCapture.flipCamera { error in
             if let error = error {
                 print("Failed to flip camera with error \(error)")
+            }
+            
+            DispatchQueue.main.async {
+                
+                if self.videoCapture.cameraPostion == .front {
+                    self.cameraLabel?.text = "FRONT CAMERA"
+                } else {
+                    self.cameraLabel?.text = "BACK CAMERA"
+                }
+                
             }
         }
     }
@@ -253,15 +391,23 @@ class SignLangRecorderViewController : UIViewController, UITextFieldDelegate, RP
         
         
         guard let frame = SLFrame.getFrame(body: bodyObseravation,
-                                     hands: handObservations,
+                                           hands: handObservations,
                                            faces: faceLandmarks) else {
             print("no frame")
             return
         }
         
+        if SLRecordingManager.shared.isRecording == true {
+            if frame.isEmpty == false {
+                print("append frame")
+                SLRecordingManager.shared.appendFrame(frame)
+            }
+        }
+        
         guard let currentFrame = self.currentFrame else {
             return
         }
+            
         
         //print("render for frame")
         let image = currentFrame.render(for: frame)
@@ -290,7 +436,7 @@ class SignLangRecorderViewController : UIViewController, UITextFieldDelegate, RP
             guard let currentFrame = self.currentFrame else {
                 return
             }
-            let preprocessImage = UIImage(cgImage: currentFrame)
+            let preprocessImage = UIImage(cgImage: currentFrame, scale: 1.0, orientation: .right)
             
             let dict = process(observations[0]) ?? [ : ]
             
@@ -352,11 +498,39 @@ class SignLangRecorderViewController : UIViewController, UITextFieldDelegate, RP
 
 }
 
-
+extension SLRecordingViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCell", for: indexPath)
+        if let extractedWorldCell = cell as? ExtractedWordCell {
+            extractedWorldCell.label?.text = SLRecordingManager.shared.wordList[indexPath.item]
+        }
+        return cell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return SLRecordingManager.shared.wordList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        SLRecordingManager.shared.currentIndex = indexPath.item
+        
+        if SLRecordingManager.shared.isRecording  {
+            let key = SLRecordingManager.shared.currentKey
+            SLRecordingManager.shared.repository[key]?.removeAll()
+        } else {
+            let word = SLRecordingManager.shared.wordList[indexPath.row]
+            self.playButton?.isEnabled = SLRecordingManager.shared.hasRecord(word: word)
+        }
+    }
+}
 
 // MARK: - VideoCaptureDelegate
 
-extension SignLangRecorderViewController : VideoCaptureDelegate {
+extension SLRecordingViewController : VideoCaptureDelegate {
     func videoCapture(_ videoCapture: VideoCapture, didCaptureFrame capturedImage: CGImage?) {
 
         guard let image = capturedImage else {
@@ -365,5 +539,22 @@ extension SignLangRecorderViewController : VideoCaptureDelegate {
 
         currentFrame = image
         estimation(image)
+    }
+}
+
+
+extension SLRecordingViewController : SLPlayerDelegate {
+    func player(_ player: SLPlayer, didOutputFrame frame: SLFrame) {
+        print("output frame")
+        
+        let image = UIImage(named: "base3")
+        if let outputImage = image?.cgImage?.render(for: frame) {
+            self.playbackImageView.image = outputImage
+        }
+    }
+    
+    func playerDidEndPlayback(_ player: SLPlayer) {
+        print("ended")
+        
     }
 }

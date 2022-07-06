@@ -61,10 +61,11 @@ class VideoCapture: NSObject {
         }
     }
 
-    public func setUpAVCapture(completion: @escaping (Error?) -> Void) {
+    public func setUpAVCapture(preset : AVCaptureSession.Preset = .vga640x480,
+                               completion: @escaping (Error?) -> Void) {
         sessionQueue.async {
             do {
-                try self.setUpAVCapture()
+                try self.setUpAVCapture(preset: preset)
                 DispatchQueue.main.async {
                     completion(nil)
                 }
@@ -74,6 +75,22 @@ class VideoCapture: NSObject {
                 }
             }
         }
+    }
+    
+    private func setUpAVCapture(preset : AVCaptureSession.Preset) throws {
+        if captureSession.isRunning {
+            captureSession.stopRunning()
+        }
+
+        captureSession.beginConfiguration()
+
+        captureSession.sessionPreset = preset
+
+        try setCaptureSessionInput()
+
+        try setCaptureSessionOutput()
+
+        captureSession.commitConfiguration()
     }
 
     private func setUpAVCapture() throws {

@@ -18,6 +18,40 @@ class CaptureFolderManager {
         self.captureDir = captureDir
     }
     
+    static func requestFramesFolderListing(completion : @escaping ([URL])->Void){
+        workQueue.async {
+            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            var documentsDirectory = paths[0]
+            documentsDirectory.appendPathComponent("slframes/")
+            
+            guard let docFolder = documentsDirectory else {
+                completion([])
+                return
+            }
+            
+//            if FileManager.default.fileExists(atPath: documentsDirectory.absoluteString.replacingOccurrences(of: "file:///", with: "/")) == false {
+//                print("create folder")
+//                try? FileManager.default.createDirectory(at: documentsDirectory, withIntermediateDirectories: true)
+//            }
+            
+            guard let folderListing =
+                    try? FileManager.default.contentsOfDirectory(at: docFolder,
+                                                                 includingPropertiesForKeys: [.creationDateKey],
+                                                                 options: [ .skipsHiddenFiles ]) else {
+                completion([])
+                return
+            }
+            
+            // Sort by creation date, newest first.
+            let sortedFolderListing = folderListing
+                .sorted { lhs, rhs in
+                    creationDate(for: lhs) > creationDate(for: rhs)
+                }
+            completion(sortedFolderListing)
+        }
+        
+    }
+    
     static func requestCaptureFolderListing(completion : @escaping ([URL])->Void){
         workQueue.async {
             let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
