@@ -322,14 +322,16 @@ class SLRecordingViewController : UIViewController, UITextFieldDelegate, RPPrevi
     
 
     func estimation(_ cgImage:CGImage) {
+        
+        
         imageSize = CGSize(width: cgImage.width, height: cgImage.height)
 
+        
+        
         
         let requestHandler = VNImageRequestHandler(cgImage: cgImage, orientation: .up, options: [:])
         //VNImageRequestHandler(cgImage: cgImage)
 
-        
-        
         // Create a new request to recognize a human body pose.
         let request = VNDetectHumanBodyPoseRequest(completionHandler: bodyPoseHandler)
 
@@ -436,7 +438,7 @@ class SLRecordingViewController : UIViewController, UITextFieldDelegate, RPPrevi
             guard let currentFrame = self.currentFrame else {
                 return
             }
-            let preprocessImage = UIImage(cgImage: currentFrame, scale: 1.0, orientation: .right)
+            let preprocessImage = UIImage(cgImage: currentFrame) //, scale: 1.0, orientation: .right)
             
             let dict = process(observations[0]) ?? [ : ]
             
@@ -547,7 +549,7 @@ extension SLRecordingViewController : SLPlayerDelegate {
     func player(_ player: SLPlayer, didOutputFrame frame: SLFrame) {
         print("output frame")
         
-        let image = UIImage(named: "base3")
+        let image = UIImage(named: "base")
         if let outputImage = image?.cgImage?.render(for: frame) {
             self.playbackImageView.image = outputImage
         }

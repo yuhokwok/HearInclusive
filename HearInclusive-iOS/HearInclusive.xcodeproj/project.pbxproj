@@ -21,6 +21,7 @@
 		ED427AF4287428BF0071700A /* SLSentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED427AF3287428BF0071700A /* SLSentence.swift */; };
 		ED427AF6287428F40071700A /* SLPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED427AF5287428F40071700A /* SLPlayer.swift */; };
 		ED43F2E92875872000E9B360 /* SLPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43F2E82875872000E9B360 /* SLPreviewViewController.swift */; };
+		ED43F2EB2875BA9D00E9B360 /* SLLiveTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43F2EA2875BA9D00E9B360 /* SLLiveTextViewController.swift */; };
 		ED448D422872EC74009772B9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ED448D412872EC74009772B9 /* README.md */; };
 		ED8BE07827477FD200DCED51 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BE07727477FD200DCED51 /* AnnouncementViewController.swift */; };
 		ED8BE07A2747828600DCED51 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BE0792747828600DCED51 /* SpeechManager.swift */; };
@@ -86,6 +87,7 @@
 		ED427AF3287428BF0071700A /* SLSentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLSentence.swift; sourceTree = "<group>"; };
 		ED427AF5287428F40071700A /* SLPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPlayer.swift; sourceTree = "<group>"; };
 		ED43F2E82875872000E9B360 /* SLPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPreviewViewController.swift; sourceTree = "<group>"; };
+		ED43F2EA2875BA9D00E9B360 /* SLLiveTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLLiveTextViewController.swift; sourceTree = "<group>"; };
 		ED448D412872EC74009772B9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		ED8BE07727477FD200DCED51 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		ED8BE0792747828600DCED51 /* SpeechManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				ED0EC01B2858EF73003839E3 /* PreviewViewCell.swift */,
 				ED1D99E128756BA0004037EA /* ExtractedWordCell.swift */,
 				ED43F2E82875872000E9B360 /* SLPreviewViewController.swift */,
+				ED43F2EA2875BA9D00E9B360 /* SLLiveTextViewController.swift */,
 			);
 			path = FlyInclusiveSignLangRecordApp;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				ED8BE07827477FD200DCED51 /* AnnouncementViewController.swift in Sources */,
 				ED0EC0182858E947003839E3 /* SignTableViewController.swift in Sources */,
 				ED8F42C628733B0200757254 /* LiveTextViewController.swift in Sources */,
+				ED43F2EB2875BA9D00E9B360 /* SLLiveTextViewController.swift in Sources */,
 				EDDBE2DB2740BA6000929EAC /* SceneDelegate.swift in Sources */,
 				ED1D99E028755FF2004037EA /* SLRecordingManager.swift in Sources */,
 				ED1D99DC28755BA9004037EA /* SLRecordingViewController.swift in Sources */,
@@ -578,9 +582,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -613,9 +616,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

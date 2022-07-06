@@ -161,8 +161,9 @@ class VideoCapture: NSObject {
         // Update the video orientation
         if let connection = videoOutput.connection(with: .video),
             connection.isVideoOrientationSupported {
-            connection.videoOrientation = .landscapeLeft
-                //AVCaptureVideoOrientation(deviceOrientation: UIDevice.current.orientation)
+            connection.videoOrientation = AVCaptureVideoOrientation(deviceOrientation: UIDevice.current.orientation)
+                //.landscapeLeft
+                
             //print("orientation \(UIDevice.current.orientation)")
             connection.isVideoMirrored = cameraPostion == .front
 

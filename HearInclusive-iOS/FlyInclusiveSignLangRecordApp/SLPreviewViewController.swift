@@ -57,7 +57,7 @@ class SLPreviewViewController: UIViewController , SLPlayerDelegate {
     
     func player(_ player: SLPlayer, didOutputFrame frame: SLFrame) {
         print("output")
-        let image = UIImage(named: "base3")
+        let image = UIImage(named: "base")
         if let outputImage = image?.cgImage?.render(for: frame) {
             self.videoView.image = outputImage
         }

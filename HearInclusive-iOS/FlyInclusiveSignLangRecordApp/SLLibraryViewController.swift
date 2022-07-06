@@ -129,7 +129,7 @@ class SLLibraryViewController : UITableViewController {
                 let count = frames.count / 2
                 if count < frames.count {
                     let frame = frames[count]
-                    let image = UIImage(named: "base3")
+                    let image = UIImage(named: "base")
                     if let outputImage = image?.cgImage?.render(for: frame) {
                         pCell.tbView.image = outputImage
                     }

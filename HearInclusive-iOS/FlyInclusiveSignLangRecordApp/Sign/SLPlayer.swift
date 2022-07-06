@@ -26,8 +26,15 @@ class SLPlayer {
     
     func play(frames : [SLFrame]) {
         
+        currentFrameIndex = 0
+        
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
+        
         if frames.count == 0 {
-            return 
+            return
         }
         self.frames = frames
         
@@ -42,6 +49,13 @@ class SLPlayer {
                 self.stop()
             }
         })
+    }
+    
+    func play(){
+        guard let frames = self.frames else {
+            return
+        }
+        self.play(frames: frames)
     }
     
     func stop() {

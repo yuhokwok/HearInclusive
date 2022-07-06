@@ -11,6 +11,8 @@ class ExtractedWordCell : UICollectionViewCell {
     
     @IBOutlet var roundedRectView : RoundBorderView?
     @IBOutlet var label : UILabel?
+    @IBOutlet var langCodeLabel : UILabel?
+    @IBOutlet var numberLabel : UILabel?
     
     override var isSelected: Bool {
         didSet {

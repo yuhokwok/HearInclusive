@@ -127,7 +127,7 @@ extension CGImage {
 
         let _cgim = cntx?.makeImage()
         if let cgi = _cgim {
-            let img = UIImage(cgImage: cgi, scale: 1.0, orientation: .right)
+            let img = UIImage(cgImage: cgi) //, scale: 1.0, orientation: .right)
             return img
         }
         
