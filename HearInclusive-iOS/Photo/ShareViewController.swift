@@ -2,7 +2,7 @@
 //  ShareViewController.swift
 //  Photo
 //
-//  Created by Yu Ho Kwok on 4/7/2022.
+//  Created by SAME Team on 4/7/2022.
 //
 
 import UIKit

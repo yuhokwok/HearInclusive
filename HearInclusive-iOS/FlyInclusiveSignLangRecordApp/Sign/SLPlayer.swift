@@ -2,7 +2,7 @@
 //  SLPlayer.swift
 //  HearInclusive
 //
-//  Created by Yu Ho Kwok on 5/7/2022.
+//  Created by SAME Team on 5/7/2022.
 //
 
 import Foundation

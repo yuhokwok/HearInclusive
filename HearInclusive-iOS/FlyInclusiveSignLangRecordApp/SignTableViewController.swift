@@ -2,7 +2,7 @@
 //  SignTableViewController.swift
 //  HearInclusive
 //
-//  Created by Yu Ho Kwok on 15/6/2022.
+//  Created by SAME Team on 15/6/2022.
 //
 
 import UIKit

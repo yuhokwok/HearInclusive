@@ -7,6 +7,9 @@ MAIC - Hong Kong Winning Projects for Hearing Impairment Users
 ###Institute: 
 Hong Kong Institute of Vocational Education (Sha Tin)
 
+###What's included in the partial version for MAIC: 
+- Live Text and Sign Language Playback
+- Entire Sign Language Recording Features
 
 ###Project Team Member:
 - Ma Po Hin Mable
