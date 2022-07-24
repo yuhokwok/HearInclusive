@@ -23,6 +23,16 @@
 		ED43F2E92875872000E9B360 /* SLPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43F2E82875872000E9B360 /* SLPreviewViewController.swift */; };
 		ED43F2EB2875BA9D00E9B360 /* SLLiveTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43F2EA2875BA9D00E9B360 /* SLLiveTextViewController.swift */; };
 		ED448D422872EC74009772B9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ED448D412872EC74009772B9 /* README.md */; };
+		ED45EB5D2886E7BD0017A4A5 /* VideoMediaInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45EB5C2886E7BD0017A4A5 /* VideoMediaInput.swift */; };
+		ED45EB5F2886FCB50017A4A5 /* IMG_4085.MOV in Resources */ = {isa = PBXBuildFile; fileRef = ED45EB5E2886FCB50017A4A5 /* IMG_4085.MOV */; };
+		ED6EC365288B09A600FB5E48 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ED6EC364288B09A600FB5E48 /* FirebaseAuth */; };
+		ED6EC367288B09A600FB5E48 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = ED6EC366288B09A600FB5E48 /* FirebaseDatabase */; };
+		ED6EC369288B09A600FB5E48 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ED6EC368288B09A600FB5E48 /* FirebaseDatabaseSwift */; };
+		ED6EC36B288B150900FB5E48 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED6EC36A288B150900FB5E48 /* GoogleService-Info.plist */; };
+		ED6EC36E288B1F3400FB5E48 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ED6EC36D288B1F3400FB5E48 /* FirebaseFirestoreSwift */; };
+		ED6EC370288B1F8500FB5E48 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ED6EC36F288B1F8500FB5E48 /* FirebaseFirestore */; };
+		ED6EC372288B22DC00FB5E48 /* SLSignStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EC371288B22DC00FB5E48 /* SLSignStoreManager.swift */; };
+		ED6EC374288BC75200FB5E48 /* SLFrame+Extraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EC373288BC75200FB5E48 /* SLFrame+Extraction.swift */; };
 		ED8BE07827477FD200DCED51 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BE07727477FD200DCED51 /* AnnouncementViewController.swift */; };
 		ED8BE07A2747828600DCED51 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BE0792747828600DCED51 /* SpeechManager.swift */; };
 		ED8BE07C2747911E00DCED51 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BE07B2747911E00DCED51 /* UIViewController.swift */; };
@@ -46,6 +56,9 @@
 		EDE1F07B2872FD2F00E0A497 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1F07A2872FD2F00E0A497 /* ShareViewController.swift */; };
 		EDE1F07E2872FD2F00E0A497 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE1F07C2872FD2F00E0A497 /* MainInterface.storyboard */; };
 		EDE1F0822872FD2F00E0A497 /* Photo.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EDE1F0782872FD2F00E0A497 /* Photo.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EDF7D433288A88CE0050F97A /* imac7.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EDF7D432288A88CD0050F97A /* imac7.mp4 */; };
+		EDF7D435288A8B6B0050F97A /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EDF7D434288A8B6B0050F97A /* videoplayback.mp4 */; };
+		EDF7D437288A8EC40050F97A /* lau.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EDF7D436288A8EBE0050F97A /* lau.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +102,12 @@
 		ED43F2E82875872000E9B360 /* SLPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPreviewViewController.swift; sourceTree = "<group>"; };
 		ED43F2EA2875BA9D00E9B360 /* SLLiveTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLLiveTextViewController.swift; sourceTree = "<group>"; };
 		ED448D412872EC74009772B9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		ED45EB5C2886E7BD0017A4A5 /* VideoMediaInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMediaInput.swift; sourceTree = "<group>"; };
+		ED45EB5E2886FCB50017A4A5 /* IMG_4085.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMG_4085.MOV; sourceTree = "<group>"; };
+		ED6EC36A288B150900FB5E48 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED6EC371288B22DC00FB5E48 /* SLSignStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLSignStoreManager.swift; sourceTree = "<group>"; };
+		ED6EC373288BC75200FB5E48 /* SLFrame+Extraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SLFrame+Extraction.swift"; sourceTree = "<group>"; };
+		ED6EC375288BCEEC00FB5E48 /* HearInclusive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearInclusive.entitlements; sourceTree = "<group>"; };
 		ED8BE07727477FD200DCED51 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		ED8BE0792747828600DCED51 /* SpeechManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
 		ED8BE07B2747911E00DCED51 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +134,9 @@
 		EDE1F07A2872FD2F00E0A497 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		EDE1F07D2872FD2F00E0A497 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		EDE1F07F2872FD2F00E0A497 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF7D432288A88CD0050F97A /* imac7.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = imac7.mp4; sourceTree = "<group>"; };
+		EDF7D434288A8B6B0050F97A /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
+		EDF7D436288A8EBE0050F97A /* lau.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lau.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +144,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED6EC369288B09A600FB5E48 /* FirebaseDatabaseSwift in Frameworks */,
+				ED6EC367288B09A600FB5E48 /* FirebaseDatabase in Frameworks */,
+				ED6EC365288B09A600FB5E48 /* FirebaseAuth in Frameworks */,
+				ED6EC370288B1F8500FB5E48 /* FirebaseFirestore in Frameworks */,
+				ED6EC36E288B1F3400FB5E48 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,9 +177,18 @@
 				ED427AF3287428BF0071700A /* SLSentence.swift */,
 				ED427AF1287428470071700A /* SLSign.swift */,
 				ED427AEF287428370071700A /* SLFrame.swift */,
+				ED6EC373288BC75200FB5E48 /* SLFrame+Extraction.swift */,
 				ED1D99DF28755FF2004037EA /* SLRecordingManager.swift */,
+				ED6EC371288B22DC00FB5E48 /* SLSignStoreManager.swift */,
 			);
 			path = Sign;
+			sourceTree = "<group>";
+		};
+		ED6EC36C288B1F3400FB5E48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		ED8BE0852747B55400DCED51 /* PA */ = {
@@ -188,13 +224,23 @@
 			path = "Live Text To Sign Language";
 			sourceTree = "<group>";
 		};
+		ED92BDE6288DACDC0021B5C4 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				ED1D99DD28755BF0004037EA /* SLLibraryViewController.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		EDDBE2CC2740BA6000929EAC = {
 			isa = PBXGroup;
 			children = (
+				ED6EC375288BCEEC00FB5E48 /* HearInclusive.entitlements */,
 				ED448D412872EC74009772B9 /* README.md */,
 				EDDBE2D72740BA6000929EAC /* FlyInclusiveSignLangRecordApp */,
 				EDE1F0792872FD2F00E0A497 /* Photo */,
 				EDDBE2D62740BA6000929EAC /* Products */,
+				ED6EC36C288B1F3400FB5E48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +256,12 @@
 		EDDBE2D72740BA6000929EAC /* FlyInclusiveSignLangRecordApp */ = {
 			isa = PBXGroup;
 			children = (
+				ED6EC36A288B150900FB5E48 /* GoogleService-Info.plist */,
+				EDF7D436288A8EBE0050F97A /* lau.mp4 */,
+				ED45EB5E2886FCB50017A4A5 /* IMG_4085.MOV */,
+				EDF7D432288A88CD0050F97A /* imac7.mp4 */,
+				EDF7D434288A8B6B0050F97A /* videoplayback.mp4 */,
+				ED45EB5C2886E7BD0017A4A5 /* VideoMediaInput.swift */,
 				ED427AEE287427D80071700A /* Sign */,
 				ED427AEB287420610071700A /* Custom View */,
 				EDDBE2EC2740BA8D00929EAC /* 3rd Party Resource */,
@@ -219,10 +271,10 @@
 				ED8BE0852747B55400DCED51 /* PA */,
 				EDDBE2D82740BA6000929EAC /* AppDelegate.swift */,
 				EDDBE2DA2740BA6000929EAC /* SceneDelegate.swift */,
-				ED1D99DD28755BF0004037EA /* SLLibraryViewController.swift */,
 				ED1D99DB28755BA9004037EA /* SLRecordingViewController.swift */,
 				EDDBE2DC2740BA6000929EAC /* SignLangRecorderViewController.swift */,
 				ED0EC0152858E895003839E3 /* CaptureFolderState.swift */,
+				ED92BDE6288DACDC0021B5C4 /* Library */,
 				ED8BE0812747961400DCED51 /* sign.mp4 */,
 				ED8BE0872747BDC900DCED51 /* ShortFilmV1.mp4 */,
 				ED8BE08F2747C60100DCED51 /* part12.mov */,
@@ -281,6 +333,13 @@
 				EDE1F0812872FD2F00E0A497 /* PBXTargetDependency */,
 			);
 			name = HearInclusive;
+			packageProductDependencies = (
+				ED6EC364288B09A600FB5E48 /* FirebaseAuth */,
+				ED6EC366288B09A600FB5E48 /* FirebaseDatabase */,
+				ED6EC368288B09A600FB5E48 /* FirebaseDatabaseSwift */,
+				ED6EC36D288B1F3400FB5E48 /* FirebaseFirestoreSwift */,
+				ED6EC36F288B1F8500FB5E48 /* FirebaseFirestore */,
+			);
 			productName = FlyInclusiveSignLangRecordApp;
 			productReference = EDDBE2D52740BA6000929EAC /* HearInclusive.app */;
 			productType = "com.apple.product-type.application";
@@ -329,6 +388,9 @@
 				Base,
 			);
 			mainGroup = EDDBE2CC2740BA6000929EAC;
+			packageReferences = (
+				ED6EC363288B09A600FB5E48 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = EDDBE2D62740BA6000929EAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,14 +406,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF7D437288A8EC40050F97A /* lau.mp4 in Resources */,
 				EDDBE2E52740BA6200929EAC /* LaunchScreen.storyboard in Resources */,
+				ED45EB5F2886FCB50017A4A5 /* IMG_4085.MOV in Resources */,
+				ED6EC36B288B150900FB5E48 /* GoogleService-Info.plist in Resources */,
 				ED8BE0912747C60200DCED51 /* part12.mov in Resources */,
+				EDF7D435288A8B6B0050F97A /* videoplayback.mp4 in Resources */,
 				EDDBE2E22740BA6200929EAC /* Assets.xcassets in Resources */,
 				ED8BE0882747BDC900DCED51 /* ShortFilmV1.mp4 in Resources */,
 				ED8BE0822747961400DCED51 /* sign.mp4 in Resources */,
 				EDDBE2E02740BA6100929EAC /* Main.storyboard in Resources */,
 				ED448D422872EC74009772B9 /* README.md in Resources */,
 				ED8BE0922747C60200DCED51 /* part22.mov in Resources */,
+				EDF7D433288A88CE0050F97A /* imac7.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +452,7 @@
 				ED8BE07C2747911E00DCED51 /* UIViewController.swift in Sources */,
 				EDDBE2DD2740BA6000929EAC /* SignLangRecorderViewController.swift in Sources */,
 				EDDBE2D92740BA6000929EAC /* AppDelegate.swift in Sources */,
+				ED45EB5D2886E7BD0017A4A5 /* VideoMediaInput.swift in Sources */,
 				ED0EC01A2858ECBE003839E3 /* PreviewViewController.swift in Sources */,
 				ED8BE08A2747BDDC00DCED51 /* InflightViewController.swift in Sources */,
 				ED8BE07827477FD200DCED51 /* AnnouncementViewController.swift in Sources */,
@@ -394,10 +462,12 @@
 				EDDBE2DB2740BA6000929EAC /* SceneDelegate.swift in Sources */,
 				ED1D99E028755FF2004037EA /* SLRecordingManager.swift in Sources */,
 				ED1D99DC28755BA9004037EA /* SLRecordingViewController.swift in Sources */,
+				ED6EC372288B22DC00FB5E48 /* SLSignStoreManager.swift in Sources */,
 				ED0EC01C2858EF73003839E3 /* PreviewViewCell.swift in Sources */,
 				EDDBE2F22740BA9800929EAC /* VideoCapture.swift in Sources */,
 				EDDBE2F12740BA9800929EAC /* AVCaptureVideoOrientation+Extension.swift in Sources */,
 				ED427AF6287428F40071700A /* SLPlayer.swift in Sources */,
+				ED6EC374288BC75200FB5E48 /* SLFrame+Extraction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +639,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HearInclusive.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G747L87TGJ;
@@ -583,13 +654,14 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hackathon.FlyInclusiveSignLangRecordApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.same.HearInclusive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -603,6 +675,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HearInclusive.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G747L87TGJ;
@@ -617,13 +690,14 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hackathon.FlyInclusiveSignLangRecordApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.same.HearInclusive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -648,7 +722,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hackathon.FlyInclusiveSignLangRecordApp.Photo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.same.HearInclusive.Photo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -674,7 +748,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hackathon.FlyInclusiveSignLangRecordApp.Photo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.same.HearInclusive.Photo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -714,6 +788,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ED6EC363288B09A600FB5E48 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ED6EC364288B09A600FB5E48 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED6EC363288B09A600FB5E48 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		ED6EC366288B09A600FB5E48 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED6EC363288B09A600FB5E48 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		ED6EC368288B09A600FB5E48 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED6EC363288B09A600FB5E48 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		ED6EC36D288B1F3400FB5E48 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED6EC363288B09A600FB5E48 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		ED6EC36F288B1F8500FB5E48 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED6EC363288B09A600FB5E48 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDDBE2CD2740BA6000929EAC /* Project object */;
 }

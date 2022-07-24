@@ -9,6 +9,44 @@ import Foundation
 import CoreGraphics
 import Vision
 
+struct SLCloudKitFrame {
+    var faceBoundingBox : SLRect
+    var faceFeatures : [String : [SLPoint]]
+    var bodyFeature : [String : SLPoint]
+    var handFeatures : [[String : SLPoint]]
+}
+
+struct SLRect  {
+    var origin : SLPoint
+    var size : SLSize
+    
+    var cgRect : CGRect {
+        return CGRect(origin: origin.cgPoint, size: size.cgSize)
+    }
+}
+
+struct SLSize  {
+    var width : NSNumber
+    var height : NSNumber
+    
+    static var zero : SLSize {
+        return SLSize(width: 0, height: 0)
+    }
+    
+    var cgSize : CGSize {
+        return CGSize(width: width.doubleValue, height: height.doubleValue)
+    }
+}
+
+struct SLPoint  {
+    var x : NSNumber
+    var y : NSNumber
+    
+    var cgPoint : CGPoint {
+        return CGPoint(x: x.doubleValue, y: y.doubleValue)
+    }
+}
+
 struct SLFrame : Codable {
     //face, max 1 face, 64 points
     var faceBoundingBox : CGRect
@@ -23,111 +61,79 @@ struct SLFrame : Codable {
     var isEmpty : Bool {
         return faceFeatures.keys.count == 0 && bodyFeature.keys.count == 0 && handFeatures.count == 0
     }
-}
-
-extension SLFrame{
-    static let openKeys = ["leftEyebrow", "rightEyebrow", "faceContour", "noseCrest", "medianLine"]
-    static let closedKeys = ["leftEye", "rightEye", "outerLips", "innerLips", "nose"]
     
-    static func getFrame(body: VNRecognizedPointsObservation?, hands : [VNRecognizedPointsObservation]?, faces : [VNFaceObservation]?) -> SLFrame? {
+    var cloudKitFrame : SLCloudKitFrame {
         
-        
-        
-        //extract body
-        var bodyDict = [String: CGPoint]()
-        if let recognizedPoints = try? body?.recognizedPoints(forGroupKey: .all) {
-            for (key, point) in recognizedPoints {
-                bodyDict[key.rawValue] = CGPoint(x: point.x, y: point.y)
+        var faceFeaturesCloudKit : [String : [SLPoint]]  = [:]
+        for (key, points) in faceFeatures {
+            var pointsCloudKit = [SLPoint]()
+            for point in points {
+                pointsCloudKit.append(point.slPoint)
             }
+            faceFeaturesCloudKit[key] = pointsCloudKit
         }
-        //print("body dict: \(bodyDict)")
         
-        var handDicts = [[String: CGPoint]]()
-        //extract hands
-        if let hands = hands {
-            if hands.count > 0 && hands.count < 3 {
-                for i in 0..<hands.count {
-                    var handDict = [String: CGPoint]()
-                    if let recognizedPoints = try? hands[i].recognizedPoints(forGroupKey: .all) {
-                        for (key, point) in recognizedPoints {
-                            handDict[key.rawValue] = CGPoint(x: point.x, y: point.y)
-                        }
-                    }
-                    handDicts.append(handDict)
-                }
-            }
+        var bodyFeaturesCloudKit : [String : SLPoint] = [:]
+        for (key, point) in bodyFeature {
+            bodyFeaturesCloudKit[key] = point.slPoint
         }
-        //print("hand dicts: \(handDicts)")
-
-        //extract faces
-        var faceFeatures = [String:[CGPoint]]()
-        var boundingBox = CGRect.zero
-        //extract hands
-        if let faces = faces {
-            if faces.count > 0 {
-                let face = faces[0]
-                
-                if let landmarks  = face.landmarks {
-                    
-                    boundingBox = face.boundingBox
-                    
-                    var keys = SLFrame.openKeys
-                    let openLandmarkRegions: [VNFaceLandmarkRegion2D?] = [
-                        landmarks.leftEyebrow,
-                        landmarks.rightEyebrow,
-                        landmarks.faceContour,
-                        landmarks.noseCrest,
-                        landmarks.medianLine
-                    ]
-                    
-                    
-                    for i in 0..<openLandmarkRegions.count {
-                        var facePoints = [CGPoint]()
-                        if let openLandmarkRegion = openLandmarkRegions[i] {
-                            for point in openLandmarkRegion.normalizedPoints {
-                                facePoints.append(point)
-                            }
-                        }
-                        faceFeatures[keys[i]] = facePoints
-                    }
-
-                    keys = SLFrame.closedKeys
-                    // Draw eyes, lips, and nose as closed regions.
-                    let closedLandmarkRegions: [VNFaceLandmarkRegion2D?] = [
-                        landmarks.leftEye,
-                        landmarks.rightEye,
-                        landmarks.outerLips,
-                        landmarks.innerLips,
-                        landmarks.nose
-                    ]
-                    
-                    for i in 0..<closedLandmarkRegions.count {
-                        
-                        var facePoints = [CGPoint]()
-                        if let closedLandmarkRegion = closedLandmarkRegions[i] {
-                            for point in closedLandmarkRegion.normalizedPoints {
-                                facePoints.append(point)
-                            }
-                        }
-                        faceFeatures[keys[i]] = facePoints
-                    }
-                }
-                
+        
+        
+        var handFeaturesCloudKit : [[String : SLPoint]] = []
+        for handFeature in handFeatures {
+            var dict = [String : SLPoint]()
+            for (key, point) in handFeature {
+                dict[key] = point.slPoint
             }
+            handFeaturesCloudKit.append(dict)
         }
-        let frame = SLFrame(faceBoundingBox: boundingBox,
-                            faceFeatures: faceFeatures,
-                            bodyFeature: bodyDict,
-                            handFeatures: handDicts)
-        return frame
+        
+        return SLCloudKitFrame(
+            faceBoundingBox: faceBoundingBox.slRect,
+            faceFeatures: faceFeaturesCloudKit,
+            bodyFeature: bodyFeaturesCloudKit,
+            handFeatures: handFeaturesCloudKit
+        )
     }
 }
 
-struct SLRegion : Codable {
-    let points : [CGPoint]
+
+
+extension CGPoint {
+    var slPoint : SLPoint {
+        return SLPoint(x: self.x as NSNumber, y: self.y as NSNumber)
+    }
+    
+    var dict : [String : Any] {
+        var dict : [String : Any] = [:]
+        dict["x"] = NSNumber(value: x)
+        dict["y"] = NSNumber(value: y)
+        return dict
+    }
 }
-//
-//struct SLPoint : Codable {
-//    let x : Double
-//    let y : Double
-//}
+
+extension CGSize {
+    var slSize : SLSize {
+        return SLSize(width: width as NSNumber, height: height as NSNumber)
+    }
+    
+    var dict : [String : Any] {
+        var dict : [String : Any] = [:]
+        dict["width"] = NSNumber(value: width)
+        dict["height"] = NSNumber(value: height)
+        return dict
+    }
+}
+
+extension CGRect {
+    var slRect : SLRect {
+        return SLRect(origin: origin.slPoint, size: size.slSize)
+    }
+    
+    var dict : [String : Any] {
+        var dict : [String : Any] = [:]
+        dict["origin"] = origin.dict
+        dict["size"] = size.dict
+        return dict
+    }
+}

@@ -22,7 +22,7 @@ class CaptureFolderManager {
         workQueue.async {
             let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
             var documentsDirectory = paths[0]
-            documentsDirectory.appendPathComponent("slframes/")
+            documentsDirectory.appendPathComponent("slsigns/")
             
             guard let docFolder = documentsDirectory else {
                 completion([])

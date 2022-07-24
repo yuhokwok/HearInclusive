@@ -16,6 +16,7 @@ class SLPreviewViewController: UIViewController , SLPlayerDelegate {
     
     var currentPlayer : SLPlayer?
     
+    var sign : SLSign?
     var frames : [SLFrame] = []
     
     override func viewDidLoad() {
@@ -27,19 +28,28 @@ class SLPreviewViewController: UIViewController , SLPlayerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let url = url else {
+        
+//        guard let url = url else {
+//            return
+//        }
+        
+        guard let sign = sign else {
             return
         }
         
+        
+        
         self.currentPlayer = SLPlayer()
         self.currentPlayer?.delegate = self
-        self.label.text = url.lastPathComponent.replacingOccurrences(of: ".slframes", with: "")
-        let word = url.lastPathComponent.replacingOccurrences(of: ".slframes", with: "")
-        if let frames  = SLRecordingManager.shared.load(name: word) {
-            self.frames = frames
-        }
         
+        //self.label.text = url.lastPathComponent.replacingOccurrences(of: ".slsigns", with: "")
+        //let word = url.lastPathComponent.replacingOccurrences(of: ".slsigns", with: "")
         
+//        if let sign  = SLRecordingManager.shared.load(name: word) {
+//            self.frames = sign.frames
+//        }
+        self.label.text = sign.name
+        self.frames = sign.frames
     }
     override func viewDidAppear(_ animated: Bool) {
         

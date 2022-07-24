@@ -7,9 +7,16 @@
 
 import UIKit
 import AVFoundation
+import Speech
+import NaturalLanguage
+
 class InflightViewController: UIViewController {
 
     @IBOutlet var videoView : UIView!
+    
+    @IBOutlet var subtitleLabel : UILabel!
+    
+    var videoMediaInput : VideoMediaInput?
     
     var playerLayer: AVPlayerLayer?
     var currentPlayer : AVPlayer?
@@ -18,15 +25,18 @@ class InflightViewController: UIViewController {
     var playerLayer2: AVPlayerLayer?
     var currentPlayer2 : AVPlayer?
     
+    private var request: SFSpeechAudioBufferRecognitionRequest?
+    private var task: SFSpeechRecognitionTask?
+    private var recognizer: SFSpeechRecognizer?
+
+    var outputText = "";
+    
+    var words : [String] = []
+    var tokenizer = NLTokenizer(unit: .word)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         
         // Configure the audio session for the app.
         let audioSession = AVAudioSession.sharedInstance()
@@ -39,21 +49,47 @@ class InflightViewController: UIViewController {
             print("ERROR: - Audio Session Failed!")
         }
         
-        self.currentPlayer?.pause()
-        self.playerLayer?.removeFromSuperlayer()
-
-
+        // try catch to start audio session
+//        do{
+//            try audioSession.setCategory(.playAndRecord, mode: .default, options: .defaultToSpeaker)
+//            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+//        }catch{
+//            print("ERROR: - Audio Session Failed!")
+//        }
+//
         
+        recognizer = SFSpeechRecognizer(locale: Locale(identifier: "zh-hk"))
+        //recognizer = SFSpeechRecognizer(locale: Locale(identifier: "en"))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        
-        let videoURL: URL = Bundle.main.url(forResource: "ShortFilmV1", withExtension: "mp4")!
-        let player = AVPlayer(url: videoURL)
-        self.currentPlayer = player
-        self.playerLayer = AVPlayerLayer(player: player)
+        let inputURL: URL = Bundle.main.url(forResource: "lau", withExtension: "mp4")!
+        videoMediaInput = VideoMediaInput(url: inputURL)
+        videoMediaInput?.delegate = self
+        videoMediaInput?.player.rate = 2.0
+            
+        self.playerLayer = AVPlayerLayer(player: videoMediaInput!.player)
         self.playerLayer!.frame = self.videoView!.bounds
         self.playerLayer?.videoGravity = .resizeAspect
         self.videoView.layer.addSublayer(self.playerLayer!)
-        self.playerLayer?.player?.play()
+        
+        //self.playerLayer?.player?.play()
+        
+        
+        //self.currentPlayer?.pause()
+        //self.playerLayer?.removeFromSuperlayer()
+
+        
+//        let videoURL: URL = Bundle.main.url(forResource: "ShortFilmV1", withExtension: "mp4")!
+//        let player = AVPlayer(url: videoURL)
+//        self.currentPlayer = player
+//        self.playerLayer = AVPlayerLayer(player: player)
+//        self.playerLayer!.frame = self.videoView!.bounds
+//        self.playerLayer?.videoGravity = .resizeAspect
+//        self.videoView.layer.addSublayer(self.playerLayer!)
+//        self.playerLayer?.player?.play()
         
         
         var items = [AVPlayerItem]()
@@ -77,6 +113,79 @@ class InflightViewController: UIViewController {
 //            player.play()
 //
 //        })
+        
+
+        print("start recording")
+        // restarts the text
+
+
+        // Create and configure the speech recognition request.
+        self.request = SFSpeechAudioBufferRecognitionRequest()
+        guard let recognitionRequest = request else { fatalError("Unable to create a SFSpeechAudioBufferRecognitionRequest object") }
+        recognitionRequest.shouldReportPartialResults = false
+        
+        
+        if #available(iOS 16, *) {
+            print("add puncutation")
+            recognitionRequest.addsPunctuation = true
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        
+        recognitionRequest.taskHint = SFSpeechRecognitionTaskHint.dictation
+        recognitionRequest.requiresOnDeviceRecognition = true
+        // Create a recognition task for the speech recognition session.
+        task = recognizer?.recognitionTask(with: recognitionRequest){ result, error in
+            if (result != nil){
+                self.outputText = (result?.bestTranscription.formattedString)!
+            }
+            if let result = result{
+                // Update the text view with the results.
+                if result.isFinal {
+                    print("clear triggered word")
+                }
+                
+                
+                
+                self.outputText = result.bestTranscription.formattedString ?? ""
+                
+                //self.delegate?.speech(self, result: "\(self.outputText)")
+                
+//                if let transcription = result.bestTranscription {
+//
+//                    for segment in transcription.segments {
+//                        print("duration: \(segment.duration)")
+//                        print("timestamp: \(segment.timestamp)")
+//                        print("substring: \(segment.substring)")
+//                    }
+//                }
+                
+                print("detect: \(self.outputText)")
+                
+                DispatchQueue.main.async {
+                    self.subtitleLabel.text = self.outputText
+                    
+                    self.tokenizer.string = self.outputText
+                    self.words.removeAll()
+                    
+                    self.tokenizer.enumerateTokens(in: self.outputText.startIndex..<self.outputText.endIndex) {
+                        range, attributes in
+                        let substring = self.outputText[range]
+                        self.words.append("\(substring)")
+                        return true
+                    }
+                    print("detect: \(self.outputText)")
+                    print("\(self.words)")
+                }
+            }
+            if error != nil {
+                self.request = nil
+                self.task = nil
+                
+            }
+        }
+        
     }
     
     @IBAction func replay(){
@@ -111,5 +220,17 @@ class InflightViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
+}
+
+
+extension InflightViewController : VideoMediaInputDelegate {
+    func videoFrameRefresh(sampleBuffer: CMSampleBuffer) {
+        //print("refresh")
+        //print("append buffer")
+        self.request?.appendAudioSampleBuffer(sampleBuffer)
+//        self.recognitionRequest?.append(buffer)
+    }
 }

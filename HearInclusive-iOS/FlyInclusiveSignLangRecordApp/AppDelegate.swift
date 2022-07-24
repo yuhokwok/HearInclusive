@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         var documentsDirectory = paths[0]
-        documentsDirectory.appendPathComponent("slframes")
+        documentsDirectory.appendPathComponent("slsigns")
         
         print("\(documentsDirectory.absoluteString)")
         let path = documentsDirectory.absoluteString.replacingOccurrences(of: "file:///", with: "/", options: .literal, range: nil)
@@ -31,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             print("use existing folder")
         }
+        
+        FirebaseApp.configure()
         
         return true
     }

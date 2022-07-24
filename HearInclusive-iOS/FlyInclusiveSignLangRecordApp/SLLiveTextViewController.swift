@@ -330,7 +330,8 @@ extension SLLiveTextViewController : UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let word = recognizgedWords[indexPath.item]
         if let string = word.string {
-            if let frames = SLRecordingManager.shared.load(name: string) {
+            if let sign = SLRecordingManager.shared.load(name: string) {
+                let frames = sign.frames
                 self.player.play(frames: frames)
                 self.playButton?.isEnabled = true
                 return

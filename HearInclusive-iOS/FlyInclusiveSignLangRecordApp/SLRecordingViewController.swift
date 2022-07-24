@@ -70,6 +70,11 @@ class SLRecordingViewController : UIViewController, UITextFieldDelegate, RPPrevi
         super.viewDidLoad()
 
         SLPlayer.shared.delegate = self
+        
+        //clear old records
+        SLRecordingManager.shared.clear()
+        
+        //prepare new for new words
         SLRecordingManager.shared.prepare(for: self.words)
         
         self.collectionView?.allowsSelection = true
@@ -137,12 +142,12 @@ class SLRecordingViewController : UIViewController, UITextFieldDelegate, RPPrevi
     }
     
     @IBAction func playButtonClicked(_ sender : Any){
-        guard let frames = SLRecordingManager.shared.repository[SLRecordingManager.shared.currentKey] else {
+        guard let sign = SLRecordingManager.shared.repository[SLRecordingManager.shared.currentKey] else {
             return
         }
         
         isPlaybackMode = true
-        SLPlayer.shared.play(frames: frames)
+        SLPlayer.shared.play(frames: sign.frames)
     }
     
     @IBAction func recordButtonClick(_ sender : Any){
@@ -186,6 +191,7 @@ class SLRecordingViewController : UIViewController, UITextFieldDelegate, RPPrevi
             return
         }
         
+        //give up this part later on
         if recorder.isRecording {
             
             
@@ -402,7 +408,7 @@ class SLRecordingViewController : UIViewController, UITextFieldDelegate, RPPrevi
         if SLRecordingManager.shared.isRecording == true {
             if frame.isEmpty == false {
                 print("append frame")
-                SLRecordingManager.shared.appendFrame(frame)
+                SLRecordingManager.shared.appendFrame(frame, with: imageSize)
             }
         }
         
@@ -522,7 +528,7 @@ extension SLRecordingViewController : UICollectionViewDelegate, UICollectionView
         
         if SLRecordingManager.shared.isRecording  {
             let key = SLRecordingManager.shared.currentKey
-            SLRecordingManager.shared.repository[key]?.removeAll()
+            SLRecordingManager.shared.repository[key]?.frames.removeAll()
         } else {
             let word = SLRecordingManager.shared.wordList[indexPath.row]
             self.playButton?.isEnabled = SLRecordingManager.shared.hasRecord(word: word)
