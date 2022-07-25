@@ -70,7 +70,7 @@ class SLRecordingManager {
         //save to cludkit
         if let signs = Array(repository.values) as? [SLSign] {
             print("save to cloudkit")
-            
+
             SLSignStoreManager.shared.storeSigns(signs: signs, storeCompletitonHandler: storeCompletitonHandler)
         }
         

@@ -147,11 +147,14 @@ extension SLLiveTextViewController : VideoCaptureDelegate {
                 //size align to width
                 let destHeight = 1 / ratioImageView * imageSize.width
                 let yOffset = (imageSize.height - destHeight) / 2
-                croppedRect = CGRectMake(0, yOffset, imageSize.width, destHeight)  //CGRectMake(0, yOffset, imageSize.width, destHeight)
+                
+                croppedRect = CGRect(x: 0, y: yOffset, width: imageSize.width, height: destHeight)  //CGRectMake(0, yOffset, imageSize.width, destHeight)
             } else {
                 let destWidth = imageSize.height * ratioImageView
                 let xOffset = (imageSize.width - destWidth) / 2
-                croppedRect = CGRectMake(xOffset, 0, destWidth, imageSize.height)
+                //croppedRect = CGRectMake(xOffset, 0, destWidth, imageSize.height)
+                
+                croppedRect = CGRect(x: xOffset, y: 0, width: destWidth, height: imageSize.height)
             }
             
             let croppedCGImage = uiImage.cgImage!.cropping(to: croppedRect)

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseCore
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,9 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             print("use existing folder")
         }
-        
-        FirebaseApp.configure()
-        
+
         return true
     }
 

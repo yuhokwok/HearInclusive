@@ -39,6 +39,7 @@ struct SLSignStoreManager {
                                           completion: @escaping ([SLSign]?, FetchError) -> Void) {
         
         guard error == nil else {
+            print("\(error?.localizedDescription)")
             completion(nil, .fetchingError)
             return
         }
@@ -69,7 +70,7 @@ struct SLSignStoreManager {
                     storeCompletitonHandler: (([CKRecord]) -> Void)?) {
         CKContainer.default().accountStatus { accountStatus, error in
             if accountStatus == .noAccount {
-                print("sign in jor")
+                print("sign in sin la")
             }
             else {
                 // Save your record here.
@@ -147,7 +148,7 @@ struct SLSignStoreManager {
         database.save(record, completionHandler: {
             record, error in
             
-            print("\(record) saved")
+            print("\(record?.recordID) saved")
             print("\(error?.localizedDescription)")
         })
         
