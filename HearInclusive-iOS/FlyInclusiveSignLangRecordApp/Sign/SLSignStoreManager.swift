@@ -17,7 +17,7 @@ struct SLSignStoreManager {
     
     private let RecordType = "SLSign"
     
-    func fetchSigns(completion: @escaping ([SLSign]?, FetchError) -> Void) {
+    func fetchSigns(completion: @escaping ([CKRecord.ID : SLSign]?, FetchError) -> Void) {
         let container = CKContainer.default()
         let database = container.publicCloudDatabase
         
@@ -36,7 +36,7 @@ struct SLSignStoreManager {
     
     
     private func processQueryResponseWith(records: [CKRecord]?, error: NSError?,
-                                          completion: @escaping ([SLSign]?, FetchError) -> Void) {
+                                          completion: @escaping ([CKRecord.ID : SLSign]?, FetchError) -> Void) {
         
         guard error == nil else {
             print("\(error?.localizedDescription)")
@@ -49,11 +49,12 @@ struct SLSignStoreManager {
             return
         }
         
-        var signs = [SLSign]()
+        var signs = [CKRecord.ID : SLSign]()
         for record in records {
             if let json = record["json"] as? String {
                 if let data = json.data(using: .utf8), let sign = SLSign.load(jsonData: data) {
-                    signs.append(sign)
+                    //signs.append(sign)
+                    signs[record.recordID] = sign
                 }
             }
         }
@@ -61,8 +62,14 @@ struct SLSignStoreManager {
         completion(signs, .none)
     }
     
-    func deleteSign() {
+    func deleteSign(recordId : CKRecord.ID, completion: @escaping ((Error?)->Void)) {
+        let container = CKContainer.default()
+        let database = container.publicCloudDatabase
         
+        database.delete(withRecordID: recordId, completionHandler: {
+            recordId, error in
+            completion(error)
+        })
         
     }
     

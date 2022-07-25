@@ -26,7 +26,6 @@
 		ED45EB5D2886E7BD0017A4A5 /* VideoMediaInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45EB5C2886E7BD0017A4A5 /* VideoMediaInput.swift */; };
 		ED5FE97B288E73A800DB65C9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5FE97A288E73A800DB65C9 /* CloudKit.framework */; };
 		ED5FE97C288E74A500DB65C9 /* Photo.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EDE1F0782872FD2F00E0A497 /* Photo.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		ED6EC36B288B150900FB5E48 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED6EC36A288B150900FB5E48 /* GoogleService-Info.plist */; };
 		ED6EC372288B22DC00FB5E48 /* SLSignStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EC371288B22DC00FB5E48 /* SLSignStoreManager.swift */; };
 		ED6EC374288BC75200FB5E48 /* SLFrame+Extraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EC373288BC75200FB5E48 /* SLFrame+Extraction.swift */; };
 		ED8BE07827477FD200DCED51 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BE07727477FD200DCED51 /* AnnouncementViewController.swift */; };
@@ -98,7 +97,6 @@
 		ED448D412872EC74009772B9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		ED45EB5C2886E7BD0017A4A5 /* VideoMediaInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMediaInput.swift; sourceTree = "<group>"; };
 		ED5FE97A288E73A800DB65C9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		ED6EC36A288B150900FB5E48 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED6EC371288B22DC00FB5E48 /* SLSignStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLSignStoreManager.swift; sourceTree = "<group>"; };
 		ED6EC373288BC75200FB5E48 /* SLFrame+Extraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SLFrame+Extraction.swift"; sourceTree = "<group>"; };
 		ED6EC375288BCEEC00FB5E48 /* HearInclusive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearInclusive.entitlements; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 		EDDBE2D72740BA6000929EAC /* FlyInclusiveSignLangRecordApp */ = {
 			isa = PBXGroup;
 			children = (
-				ED6EC36A288B150900FB5E48 /* GoogleService-Info.plist */,
 				EDF7D436288A8EBE0050F97A /* lau.mp4 */,
 				EDF7D434288A8B6B0050F97A /* videoplayback.mp4 */,
 				ED45EB5C2886E7BD0017A4A5 /* VideoMediaInput.swift */,
@@ -390,7 +387,6 @@
 			files = (
 				EDF7D437288A8EC40050F97A /* lau.mp4 in Resources */,
 				EDDBE2E52740BA6200929EAC /* LaunchScreen.storyboard in Resources */,
-				ED6EC36B288B150900FB5E48 /* GoogleService-Info.plist in Resources */,
 				ED8BE0912747C60200DCED51 /* part12.mov in Resources */,
 				EDF7D435288A8B6B0050F97A /* videoplayback.mp4 in Resources */,
 				EDDBE2E22740BA6200929EAC /* Assets.xcassets in Resources */,

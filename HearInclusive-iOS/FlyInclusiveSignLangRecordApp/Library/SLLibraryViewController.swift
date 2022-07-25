@@ -8,12 +8,13 @@
 import UIKit
 import AVFoundation
 import NaturalLanguage
+import CloudKit
 
 class SLLibraryViewController : UITableViewController {
     
     var urls : [URL] = []
     
-    var signs : [SLSign] = []
+    var signs : [CKRecord.ID : SLSign] = [:]
     
     var words : [String] = []
     
@@ -139,10 +140,29 @@ class SLLibraryViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let url = urls[indexPath.row]
+            //let url = urls[indexPath.row]
+            
+            let key = Array(self.signs.keys)[indexPath.item]
+            
+            SLSignStoreManager.shared.deleteSign(recordId: key, completion: {
+                error in
+                
+                if let error = error {
+                    print("\(error.localizedDescription)")
+                } else {
+                    DispatchQueue.main.async {
+                        self.signs.removeValue(forKey: key)
+                        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                    }
+                }
+            })
+            
+            
+            /*
             try? FileManager.default.removeItem(at: url)
             urls.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+             */
+            
         }
     }
     
@@ -164,14 +184,17 @@ class SLLibraryViewController : UITableViewController {
 
         if let pCell = cell as? PreviewViewCell {
             
-            let sign = signs[indexPath.row]
+            let recordId = Array(signs.keys)[indexPath.row]
             
-            pCell.label.text = sign.name
-            
-            let image = UIImage(named: "base")
-            if let frame = sign.previewFrame {
-                if let outputImage = image?.cgImage?.render(for: frame) {
-                    pCell.tbView.image = outputImage
+            if let sign = signs[recordId] {
+                
+                pCell.label.text = sign.name
+                
+                let image = UIImage(named: "base")
+                if let frame = sign.previewFrame {
+                    if let outputImage = image?.cgImage?.render(for: frame) {
+                        pCell.tbView.image = outputImage
+                    }
                 }
             }
             
@@ -219,7 +242,8 @@ class SLLibraryViewController : UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-    */
+     */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -259,7 +283,8 @@ class SLLibraryViewController : UITableViewController {
             }
         } else if let vc = segue.destination as? SLPreviewViewController {
             //vc.url = urls[self.tableView.indexPathForSelectedRow!.item]
-            vc.sign = signs[self.tableView.indexPathForSelectedRow!.item]
+            let recordId = Array(signs.keys)[self.tableView.indexPathForSelectedRow!.item]
+            vc.sign = signs[recordId]
         }
     }
 }
