@@ -76,7 +76,7 @@ class SLLibraryViewController : UITableViewController {
             self.alertTextField = textfield
         }
         
-        alert.addAction(UIAlertAction(title: "Confirm", style: .default) {
+        alert.addAction(UIAlertAction(title: "Analysis", style: .default) {
             action in
             
             if let textField = self.alertTextField {
@@ -92,6 +92,19 @@ class SLLibraryViewController : UITableViewController {
                         return true
                     }
                     
+                    self.performSegue(withIdentifier: "RecordHandSign", sender: nil)
+                }
+            }
+        })
+        
+        alert.addAction(UIAlertAction(title: "Record", style: .default) {
+            action in
+            
+            if let textField = self.alertTextField {
+                if let text = textField.text {
+                    
+                    self.words.removeAll()
+                    self.words.append(text)
                     self.performSegue(withIdentifier: "RecordHandSign", sender: nil)
                 }
             }
