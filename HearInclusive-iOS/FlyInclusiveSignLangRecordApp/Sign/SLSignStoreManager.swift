@@ -17,6 +17,55 @@ struct SLSignStoreManager {
     
     private let RecordType = "SLSign"
     
+    func fetchSignsPartial(completion: @escaping ([CKRecord.ID : SLSign]?, FetchError) -> Void) {
+        let container = CKContainer.default()
+        let database = container.publicCloudDatabase
+        
+        
+        let pred = NSPredicate(value: true)
+        let sort = NSSortDescriptor(key: "modificationDate", ascending: false)
+        let query = CKQuery(recordType: "SLSign", predicate: pred)
+        query.sortDescriptors = [sort]
+        
+        let operation = CKQueryOperation(query: query)
+        //operation.desiredKeys = ["genre", "comments"]
+        operation.resultsLimit = 30
+        
+        var signs = [CKRecord.ID : SLSign]()
+        
+        operation.recordMatchedBlock = {
+            recordId, result in
+            
+            switch (result){
+            case .success(let record):
+                if let json = record["json"] as? String {
+                    if let data = json.data(using: .utf8), let sign = SLSign.load(jsonData: data) {
+                        //signs.append(sign)
+                        signs[record.recordID] = sign
+                    }
+                }
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
+        
+        operation.queryResultBlock = {
+            result in
+            
+            switch(result){
+            case .success(let cursor):
+                print("have cursor")
+                completion(signs, .none)
+            case .failure(let error):
+                print("error: \(error)")
+            }
+            
+        }
+        
+        database.add(operation)
+        
+    }
+    
     func fetchSigns(completion: @escaping ([CKRecord.ID : SLSign]?, FetchError) -> Void) {
         let container = CKContainer.default()
         let database = container.publicCloudDatabase

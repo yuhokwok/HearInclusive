@@ -35,7 +35,9 @@ class SLLibraryViewController : UITableViewController {
                 
                 //backup, refresh all result
                 print("re-fetch")
-                SLSignStoreManager.shared.fetchSigns(completion: {
+                
+                //SLSignStoreManager.shared.fetchSigns(completion: {
+                SLSignStoreManager.shared.fetchSignsPartial(completion: {
                     signs, error in
 
                     print("\(error)")
@@ -138,7 +140,7 @@ class SLLibraryViewController : UITableViewController {
 //            }
 //        })
         
-        SLSignStoreManager.shared.fetchSigns(completion: {
+        SLSignStoreManager.shared.fetchSignsPartial(completion: {
             signs, error in
 
             if let signs = signs {
