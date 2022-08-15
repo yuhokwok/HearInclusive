@@ -17,6 +17,24 @@ struct SLSignStoreManager {
     
     private let RecordType = "SLSign"
     
+    func fetchSign(word : String, completion: @escaping ([CKRecord.ID : SLSign]?, FetchError) -> Void){
+        let container = CKContainer.default()
+        let database = container.publicCloudDatabase
+        
+        let pred = NSPredicate(format: "self.name = %@", word)
+        let sort = NSSortDescriptor(key: "modificationDate", ascending: false)
+        let query = CKQuery(recordType: "SLSign", predicate: pred)
+        
+        database.perform(query, inZoneWith: CKRecordZone.default().zoneID, completionHandler: {
+            (records, error) -> Void in
+            self.processQueryResponseWith(records: records, error: error as NSError?, completion: {
+                fetchedRecords, fetchError in
+
+                completion(fetchedRecords, fetchError)
+            })
+        })
+    }
+    
     func fetchSignsPartial(completion: @escaping ([CKRecord.ID : SLSign]?, FetchError) -> Void) {
         let container = CKContainer.default()
         let database = container.publicCloudDatabase

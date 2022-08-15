@@ -333,12 +333,31 @@ extension SLLiveTextViewController : UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let word = recognizgedWords[indexPath.item]
         if let string = word.string {
-            if let sign = SLRecordingManager.shared.load(name: string) {
-                let frames = sign.frames
-                self.player.play(frames: frames)
-                self.playButton?.isEnabled = true
-                return
+            
+            SLSignStoreManager.shared.fetchSign(word: word.string!) {
+                result, error in
+                
+                guard let result = result else {
+                    return
+                }
+                
+                for (key, sign) in result {
+                    DispatchQueue.main.async {
+                        let frames = sign.frames
+                        self.player.play(frames: frames)
+                        self.playButton?.isEnabled = true
+                    }
+                    break;
+                }
+                
             }
+            
+//            if let sign = SLRecordingManager.shared.load(name: string) {
+//                let frames = sign.frames
+//                self.player.play(frames: frames)
+//                self.playButton?.isEnabled = true
+//                return
+//            }
         }
         self.playButton?.isEnabled = false
     }

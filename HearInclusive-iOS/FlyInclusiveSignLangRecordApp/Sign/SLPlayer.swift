@@ -24,6 +24,10 @@ class SLPlayer {
     
     var frames : [SLFrame]?
     
+    func play(scenetence : SLSentence) {
+        
+    }
+    
     func play(frames : [SLFrame]) {
         
         currentFrameIndex = 0

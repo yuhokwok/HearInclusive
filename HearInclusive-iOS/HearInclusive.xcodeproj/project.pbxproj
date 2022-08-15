@@ -39,6 +39,13 @@
 		ED8BE0912747C60200DCED51 /* part12.mov in Resources */ = {isa = PBXBuildFile; fileRef = ED8BE08F2747C60100DCED51 /* part12.mov */; };
 		ED8BE0922747C60200DCED51 /* part22.mov in Resources */ = {isa = PBXBuildFile; fileRef = ED8BE0902747C60100DCED51 /* part22.mov */; };
 		ED8F42C628733B0200757254 /* LiveTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F42C528733B0200757254 /* LiveTextViewController.swift */; };
+		ED95046128AA2DB200190565 /* SLPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED427AF5287428F40071700A /* SLPlayer.swift */; };
+		ED95046228AA2DB600190565 /* SLSentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED427AF3287428BF0071700A /* SLSentence.swift */; };
+		ED95046328AA2DB600190565 /* SLFrame+Extraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EC373288BC75200FB5E48 /* SLFrame+Extraction.swift */; };
+		ED95046428AA2DB600190565 /* SLFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED427AEF287428370071700A /* SLFrame.swift */; };
+		ED95046528AA2DB600190565 /* SLSignStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EC371288B22DC00FB5E48 /* SLSignStoreManager.swift */; };
+		ED95046628AA2DB600190565 /* SLRecordingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D99DF28755FF2004037EA /* SLRecordingManager.swift */; };
+		ED95046728AA2DB600190565 /* SLSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED427AF1287428470071700A /* SLSign.swift */; };
 		EDDBE2D92740BA6000929EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2D82740BA6000929EAC /* AppDelegate.swift */; };
 		EDDBE2DB2740BA6000929EAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2DA2740BA6000929EAC /* SceneDelegate.swift */; };
 		EDDBE2DD2740BA6000929EAC /* SignLangRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2DC2740BA6000929EAC /* SignLangRecorderViewController.swift */; };
@@ -452,6 +459,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDE1F07B2872FD2F00E0A497 /* ShareViewController.swift in Sources */,
+				ED95046528AA2DB600190565 /* SLSignStoreManager.swift in Sources */,
+				ED95046328AA2DB600190565 /* SLFrame+Extraction.swift in Sources */,
+				ED95046128AA2DB200190565 /* SLPlayer.swift in Sources */,
+				ED95046428AA2DB600190565 /* SLFrame.swift in Sources */,
+				ED95046628AA2DB600190565 /* SLRecordingManager.swift in Sources */,
+				ED95046228AA2DB600190565 /* SLSentence.swift in Sources */,
+				ED95046728AA2DB600190565 /* SLSign.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
