@@ -8,31 +8,22 @@
 import UIKit
 import VisionKit
 import Vision
+import NaturalLanguage
 
-class MenuButton : UIButton {
-    @IBOutlet var associatedView : MenuButton?
-    override var isHighlighted: Bool {
-        didSet {
-            if let associatedViewHighlighted = self.associatedView?.isHighlighted {
-                if associatedViewHighlighted != isHighlighted {
-                    self.associatedView?.isHighlighted = isHighlighted
-                }
-            }
-        }
-    }
-}
 
-struct RecognizedWord {
-    let string : String?
-    let boundingBox : VNRectangleObservation
-}
 
 class SLLiveTextViewController : UIViewController, SLPlayerDelegate {
     
-    private var requests = [VNRequest]()
+    @IBOutlet var hiTabBar : HITabBar?
+    @IBOutlet var browseBarButtonItem : UIBarButtonItem?
+    
+    
     
     private let videoCapture = VideoCapture()
     private var currentImage: UIImage?
+    
+    
+    private var requests = [VNRequest]()
     
     @IBOutlet var imageView : UIImageView!
     @IBOutlet var slImageView : UIImageView!
@@ -40,12 +31,31 @@ class SLLiveTextViewController : UIViewController, SLPlayerDelegate {
     @IBOutlet var languageButton : MenuButton?
     @IBOutlet var subLanguageButton : MenuButton?
     
+    var tokenizer = NLTokenizer(unit: .word)
+    
     @IBOutlet var collectionView : UICollectionView?
     var recognizgedWords = [RecognizedWord]() {
         didSet{
             //TODO
+            var recognizedWords = [RecognizedWord]()
+            for recognizgedWord in recognizgedWords {
+                self.tokenizer.string = recognizgedWord.string!
+                var words : [String] = []
+                self.tokenizer.enumerateTokens(in: recognizgedWord.string!.startIndex..<recognizgedWord.string!.endIndex) {
+                    range, attributes in
+                    let substring = recognizgedWord.string![range]
+                    words.append("\(substring)")
+                    return true
+                }
+                for word in words {
+                    
+                    recognizedWords.append(RecognizedWord(string: word, boundingBox: recognizgedWord.boundingBox))
+                }
+            }
+            recognizgedWords = recognizedWords
         }
     }
+    
     
     @IBOutlet var playButton : UIButton?
     
@@ -69,13 +79,15 @@ class SLLiveTextViewController : UIViewController, SLPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hiTabBar?.delegate = self
+        
         self.player.delegate = self
         
         self.collectionView?.allowsSelection = true
         self.collectionView?.allowsMultipleSelection = false
         
-        setupVision()
         
+        self.navigationItem.leftBarButtonItem = nil
     }
     
     @IBAction func playBtnClicked(){
@@ -85,7 +97,13 @@ class SLLiveTextViewController : UIViewController, SLPlayerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.setupAndBeginCapturingVideoFrames()
+        setupVision()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -323,6 +341,16 @@ extension SLLiveTextViewController : VideoCaptureDelegate {
     
 }
 
+extension SLLiveTextViewController : HITabBarDelegate {
+    func hiTabBar(_ tabBar: HITabBar, didSelecteIndex: Int) {
+        if didSelecteIndex == 1 {
+            self.navigationItem.leftBarButtonItem = self.browseBarButtonItem
+        } else {
+            self.navigationItem.leftBarButtonItem = nil
+        }
+    }
+}
+
 extension SLLiveTextViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     
@@ -390,5 +418,9 @@ extension SLLiveTextViewController : UICollectionViewDelegate, UICollectionViewD
         if let outputImage = image?.cgImage?.render(for: frame) {
             self.slImageView?.image = outputImage
         }
+    }
+    
+    func player(_ player: SLPlayer, startPlaying word: String, at index: Int) {
+        
     }
 }

@@ -23,4 +23,19 @@ extension AVCaptureVideoOrientation {
             self = .portrait
         }
     }
+    
+    init(interfaceOrientation : UIInterfaceOrientation){
+        switch interfaceOrientation {
+        case .landscapeLeft:
+            self = .landscapeLeft
+        case .landscapeRight:
+            self = .landscapeRight
+        case .portrait:
+            self = .portrait
+        case .portraitUpsideDown:
+            self = .portraitUpsideDown
+        default:
+            self = .portrait
+        }
+    }
 }

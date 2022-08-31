@@ -11,10 +11,15 @@
 		ED0EC0182858E947003839E3 /* SignTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC0172858E947003839E3 /* SignTableViewController.swift */; };
 		ED0EC01A2858ECBE003839E3 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC0192858ECBE003839E3 /* PreviewViewController.swift */; };
 		ED0EC01C2858EF73003839E3 /* PreviewViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC01B2858EF73003839E3 /* PreviewViewCell.swift */; };
+		ED0FC69328B236570065F782 /* SpeechAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC69228B236570065F782 /* SpeechAudio.swift */; };
+		ED1231C728B28AB100D2EF2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDDBE2E12740BA6200929EAC /* Assets.xcassets */; };
+		ED1231CA28B28E4500D2EF2A /* HITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1231C928B28E4400D2EF2A /* HITabBar.swift */; };
 		ED1D99DC28755BA9004037EA /* SLRecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D99DB28755BA9004037EA /* SLRecordingViewController.swift */; };
 		ED1D99DE28755BF0004037EA /* SLLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D99DD28755BF0004037EA /* SLLibraryViewController.swift */; };
 		ED1D99E028755FF2004037EA /* SLRecordingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D99DF28755FF2004037EA /* SLRecordingManager.swift */; };
 		ED1D99E228756BA0004037EA /* ExtractedWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D99E128756BA0004037EA /* ExtractedWordCell.swift */; };
+		ED40781E28BFC3A200F36569 /* ShareViewController+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40781D28BFC3A200F36569 /* ShareViewController+Image.swift */; };
+		ED40782028BFC5B100F36569 /* ShareViewController+VideoAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40781F28BFC5B100F36569 /* ShareViewController+VideoAudio.swift */; };
 		ED427AED287420780071700A /* RoundBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED427AEC287420780071700A /* RoundBorderView.swift */; };
 		ED427AF0287428370071700A /* SLFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED427AEF287428370071700A /* SLFrame.swift */; };
 		ED427AF2287428470071700A /* SLSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED427AF1287428470071700A /* SLSign.swift */; };
@@ -46,6 +51,21 @@
 		ED95046528AA2DB600190565 /* SLSignStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EC371288B22DC00FB5E48 /* SLSignStoreManager.swift */; };
 		ED95046628AA2DB600190565 /* SLRecordingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D99DF28755FF2004037EA /* SLRecordingManager.swift */; };
 		ED95046728AA2DB600190565 /* SLSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED427AF1287428470071700A /* SLSign.swift */; };
+		EDAB3B1428BD32CD00CAB0A6 /* HITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1231C928B28E4400D2EF2A /* HITabBar.swift */; };
+		EDAB3B1528BD32D100CAB0A6 /* VideoMediaInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45EB5C2886E7BD0017A4A5 /* VideoMediaInput.swift */; };
+		EDAB3B1628BD32F000CAB0A6 /* PreviewViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC01B2858EF73003839E3 /* PreviewViewCell.swift */; };
+		EDAB3B1728BD32F000CAB0A6 /* ExtractedWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D99E128756BA0004037EA /* ExtractedWordCell.swift */; };
+		EDAB3B1928BD330F00CAB0A6 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3B1828BD330F00CAB0A6 /* MenuButton.swift */; };
+		EDAB3B1A28BD331600CAB0A6 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3B1828BD330F00CAB0A6 /* MenuButton.swift */; };
+		EDAB3B1B28BD333700CAB0A6 /* RoundBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED427AEC287420780071700A /* RoundBorderView.swift */; };
+		EDAB3B1E28BE45C600CAB0A6 /* NLPEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3B1C28BE422900CAB0A6 /* NLPEngine.swift */; };
+		EDAB3B2228BE771B00CAB0A6 /* CGImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2F32740BAD400929EAC /* CGImageExt.swift */; };
+		EDAB3B2728BF6D9E00CAB0A6 /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = EDAB3B2628BF6D9E00CAB0A6 /* DSWaveformImage */; };
+		EDAB3B2928BF6DE600CAB0A6 /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = EDAB3B2828BF6DE600CAB0A6 /* DSWaveformImage */; };
+		EDAB3B2F28BFB12B00CAB0A6 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3B2E28BFB12B00CAB0A6 /* PlayerView.swift */; };
+		EDAB3B3128BFB18E00CAB0A6 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3B2E28BFB12B00CAB0A6 /* PlayerView.swift */; };
+		EDAB3B3228BFB19100CAB0A6 /* SpeechAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FC69228B236570065F782 /* SpeechAudio.swift */; };
+		EDAB3B3328BFB19300CAB0A6 /* NLPEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3B1C28BE422900CAB0A6 /* NLPEngine.swift */; };
 		EDDBE2D92740BA6000929EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2D82740BA6000929EAC /* AppDelegate.swift */; };
 		EDDBE2DB2740BA6000929EAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2DA2740BA6000929EAC /* SceneDelegate.swift */; };
 		EDDBE2DD2740BA6000929EAC /* SignLangRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2DC2740BA6000929EAC /* SignLangRecorderViewController.swift */; };
@@ -57,7 +77,6 @@
 		EDDBE2F42740BAD400929EAC /* CGImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBE2F32740BAD400929EAC /* CGImageExt.swift */; };
 		EDE1F07B2872FD2F00E0A497 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1F07A2872FD2F00E0A497 /* ShareViewController.swift */; };
 		EDE1F07E2872FD2F00E0A497 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE1F07C2872FD2F00E0A497 /* MainInterface.storyboard */; };
-		EDF7D435288A8B6B0050F97A /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EDF7D434288A8B6B0050F97A /* videoplayback.mp4 */; };
 		EDF7D437288A8EC40050F97A /* lau.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EDF7D436288A8EBE0050F97A /* lau.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -90,10 +109,14 @@
 		ED0EC0172858E947003839E3 /* SignTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignTableViewController.swift; sourceTree = "<group>"; };
 		ED0EC0192858ECBE003839E3 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		ED0EC01B2858EF73003839E3 /* PreviewViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewCell.swift; sourceTree = "<group>"; };
+		ED0FC69228B236570065F782 /* SpeechAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechAudio.swift; sourceTree = "<group>"; };
+		ED1231C928B28E4400D2EF2A /* HITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HITabBar.swift; sourceTree = "<group>"; };
 		ED1D99DB28755BA9004037EA /* SLRecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLRecordingViewController.swift; sourceTree = "<group>"; };
 		ED1D99DD28755BF0004037EA /* SLLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLLibraryViewController.swift; sourceTree = "<group>"; };
 		ED1D99DF28755FF2004037EA /* SLRecordingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLRecordingManager.swift; sourceTree = "<group>"; };
 		ED1D99E128756BA0004037EA /* ExtractedWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractedWordCell.swift; sourceTree = "<group>"; };
+		ED40781D28BFC3A200F36569 /* ShareViewController+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShareViewController+Image.swift"; sourceTree = "<group>"; };
+		ED40781F28BFC5B100F36569 /* ShareViewController+VideoAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShareViewController+VideoAudio.swift"; sourceTree = "<group>"; };
 		ED427AEC287420780071700A /* RoundBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBorderView.swift; sourceTree = "<group>"; };
 		ED427AEF287428370071700A /* SLFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLFrame.swift; sourceTree = "<group>"; };
 		ED427AF1287428470071700A /* SLSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLSign.swift; sourceTree = "<group>"; };
@@ -118,6 +141,10 @@
 		ED8BE08F2747C60100DCED51 /* part12.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = part12.mov; sourceTree = "<group>"; };
 		ED8BE0902747C60100DCED51 /* part22.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = part22.mov; sourceTree = "<group>"; };
 		ED8F42C528733B0200757254 /* LiveTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTextViewController.swift; sourceTree = "<group>"; };
+		EDAB3B1828BD330F00CAB0A6 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		EDAB3B1C28BE422900CAB0A6 /* NLPEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLPEngine.swift; sourceTree = "<group>"; };
+		EDAB3B2328BE776500CAB0A6 /* Photo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Photo.entitlements; sourceTree = "<group>"; };
+		EDAB3B2E28BFB12B00CAB0A6 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		EDDBE2D52740BA6000929EAC /* HearInclusive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HearInclusive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDBE2D82740BA6000929EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDDBE2DA2740BA6000929EAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,7 +160,6 @@
 		EDE1F07A2872FD2F00E0A497 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		EDE1F07D2872FD2F00E0A497 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		EDE1F07F2872FD2F00E0A497 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDF7D434288A8B6B0050F97A /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
 		EDF7D436288A8EBE0050F97A /* lau.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lau.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDAB3B2728BF6D9E00CAB0A6 /* DSWaveformImage in Frameworks */,
 				ED5FE97B288E73A800DB65C9 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,16 +177,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDAB3B2928BF6DE600CAB0A6 /* DSWaveformImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED0FC69128B236350065F782 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				ED427AEB287420610071700A /* Custom View */,
+				ED427AEE287427D80071700A /* Sign */,
+				EDAB3B1C28BE422900CAB0A6 /* NLPEngine.swift */,
+				ED0FC69228B236570065F782 /* SpeechAudio.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		ED1231C828B28DE700D2EF2A /* CustomTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				ED1231C928B28E4400D2EF2A /* HITabBar.swift */,
+			);
+			path = CustomTabbar;
+			sourceTree = "<group>";
+		};
 		ED427AEB287420610071700A /* Custom View */ = {
 			isa = PBXGroup;
 			children = (
+				EDAB3B2E28BFB12B00CAB0A6 /* PlayerView.swift */,
 				ED427AEC287420780071700A /* RoundBorderView.swift */,
+				EDAB3B1828BD330F00CAB0A6 /* MenuButton.swift */,
 			);
 			path = "Custom View";
 			sourceTree = "<group>";
@@ -227,12 +276,32 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
+		EDAB3B1F28BE6B5F00CAB0A6 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		EDAB3B3428BFB1BE00CAB0A6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EDF7D436288A8EBE0050F97A /* lau.mp4 */,
+				ED8BE0812747961400DCED51 /* sign.mp4 */,
+				ED8BE0872747BDC900DCED51 /* ShortFilmV1.mp4 */,
+				ED8BE08F2747C60100DCED51 /* part12.mov */,
+				ED8BE0902747C60100DCED51 /* part22.mov */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		EDDBE2CC2740BA6000929EAC = {
 			isa = PBXGroup;
 			children = (
 				ED6EC375288BCEEC00FB5E48 /* HearInclusive.entitlements */,
 				ED448D412872EC74009772B9 /* README.md */,
 				EDDBE2D72740BA6000929EAC /* FlyInclusiveSignLangRecordApp */,
+				ED0FC69128B236350065F782 /* Shared */,
 				EDE1F0792872FD2F00E0A497 /* Photo */,
 				EDDBE2D62740BA6000929EAC /* Products */,
 				ED6EC36C288B1F3400FB5E48 /* Frameworks */,
@@ -251,11 +320,9 @@
 		EDDBE2D72740BA6000929EAC /* FlyInclusiveSignLangRecordApp */ = {
 			isa = PBXGroup;
 			children = (
-				EDF7D436288A8EBE0050F97A /* lau.mp4 */,
-				EDF7D434288A8B6B0050F97A /* videoplayback.mp4 */,
+				EDAB3B3428BFB1BE00CAB0A6 /* Resources */,
+				ED1231C828B28DE700D2EF2A /* CustomTabbar */,
 				ED45EB5C2886E7BD0017A4A5 /* VideoMediaInput.swift */,
-				ED427AEE287427D80071700A /* Sign */,
-				ED427AEB287420610071700A /* Custom View */,
 				EDDBE2EC2740BA8D00929EAC /* 3rd Party Resource */,
 				ED8F42C428733ADF00757254 /* Live Text To Sign Language */,
 				ED8BE0932747C75300DCED51 /* TextToSignLanguage */,
@@ -267,10 +334,6 @@
 				EDDBE2DC2740BA6000929EAC /* SignLangRecorderViewController.swift */,
 				ED0EC0152858E895003839E3 /* CaptureFolderState.swift */,
 				ED92BDE6288DACDC0021B5C4 /* Library */,
-				ED8BE0812747961400DCED51 /* sign.mp4 */,
-				ED8BE0872747BDC900DCED51 /* ShortFilmV1.mp4 */,
-				ED8BE08F2747C60100DCED51 /* part12.mov */,
-				ED8BE0902747C60100DCED51 /* part22.mov */,
 				EDDBE2DE2740BA6100929EAC /* Main.storyboard */,
 				EDDBE2E12740BA6200929EAC /* Assets.xcassets */,
 				EDDBE2E32740BA6200929EAC /* LaunchScreen.storyboard */,
@@ -300,9 +363,13 @@
 		EDE1F0792872FD2F00E0A497 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				EDAB3B1F28BE6B5F00CAB0A6 /* SwiftUI */,
+				EDAB3B2328BE776500CAB0A6 /* Photo.entitlements */,
 				EDE1F07A2872FD2F00E0A497 /* ShareViewController.swift */,
 				EDE1F07C2872FD2F00E0A497 /* MainInterface.storyboard */,
 				EDE1F07F2872FD2F00E0A497 /* Info.plist */,
+				ED40781D28BFC3A200F36569 /* ShareViewController+Image.swift */,
+				ED40781F28BFC5B100F36569 /* ShareViewController+VideoAudio.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -326,6 +393,7 @@
 			);
 			name = HearInclusive;
 			packageProductDependencies = (
+				EDAB3B2628BF6D9E00CAB0A6 /* DSWaveformImage */,
 			);
 			productName = FlyInclusiveSignLangRecordApp;
 			productReference = EDDBE2D52740BA6000929EAC /* HearInclusive.app */;
@@ -344,6 +412,9 @@
 			dependencies = (
 			);
 			name = Photo;
+			packageProductDependencies = (
+				EDAB3B2828BF6DE600CAB0A6 /* DSWaveformImage */,
+			);
 			productName = Photo;
 			productReference = EDE1F0782872FD2F00E0A497 /* Photo.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -376,6 +447,7 @@
 			);
 			mainGroup = EDDBE2CC2740BA6000929EAC;
 			packageReferences = (
+				EDAB3B2528BF6D9E00CAB0A6 /* XCRemoteSwiftPackageReference "DSWaveformImage" */,
 			);
 			productRefGroup = EDDBE2D62740BA6000929EAC /* Products */;
 			projectDirPath = "";
@@ -395,7 +467,6 @@
 				EDF7D437288A8EC40050F97A /* lau.mp4 in Resources */,
 				EDDBE2E52740BA6200929EAC /* LaunchScreen.storyboard in Resources */,
 				ED8BE0912747C60200DCED51 /* part12.mov in Resources */,
-				EDF7D435288A8B6B0050F97A /* videoplayback.mp4 in Resources */,
 				EDDBE2E22740BA6200929EAC /* Assets.xcassets in Resources */,
 				ED8BE0882747BDC900DCED51 /* ShortFilmV1.mp4 in Resources */,
 				ED8BE0822747961400DCED51 /* sign.mp4 in Resources */,
@@ -409,6 +480,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED1231C728B28AB100D2EF2A /* Assets.xcassets in Resources */,
 				EDE1F07E2872FD2F00E0A497 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +498,7 @@
 				ED43F2E92875872000E9B360 /* SLPreviewViewController.swift in Sources */,
 				ED1D99DE28755BF0004037EA /* SLLibraryViewController.swift in Sources */,
 				ED1D99E228756BA0004037EA /* ExtractedWordCell.swift in Sources */,
+				ED1231CA28B28E4500D2EF2A /* HITabBar.swift in Sources */,
 				ED0EC0162858E895003839E3 /* CaptureFolderState.swift in Sources */,
 				ED8BE0802747956600DCED51 /* PAViewController.swift in Sources */,
 				ED427AF4287428BF0071700A /* SLSentence.swift in Sources */,
@@ -436,13 +509,17 @@
 				EDDBE2DD2740BA6000929EAC /* SignLangRecorderViewController.swift in Sources */,
 				EDDBE2D92740BA6000929EAC /* AppDelegate.swift in Sources */,
 				ED45EB5D2886E7BD0017A4A5 /* VideoMediaInput.swift in Sources */,
+				EDAB3B1928BD330F00CAB0A6 /* MenuButton.swift in Sources */,
 				ED0EC01A2858ECBE003839E3 /* PreviewViewController.swift in Sources */,
 				ED8BE08A2747BDDC00DCED51 /* InflightViewController.swift in Sources */,
 				ED8BE07827477FD200DCED51 /* AnnouncementViewController.swift in Sources */,
+				EDAB3B3128BFB18E00CAB0A6 /* PlayerView.swift in Sources */,
 				ED0EC0182858E947003839E3 /* SignTableViewController.swift in Sources */,
 				ED8F42C628733B0200757254 /* LiveTextViewController.swift in Sources */,
 				ED43F2EB2875BA9D00E9B360 /* SLLiveTextViewController.swift in Sources */,
 				EDDBE2DB2740BA6000929EAC /* SceneDelegate.swift in Sources */,
+				EDAB3B3328BFB19300CAB0A6 /* NLPEngine.swift in Sources */,
+				EDAB3B3228BFB19100CAB0A6 /* SpeechAudio.swift in Sources */,
 				ED1D99E028755FF2004037EA /* SLRecordingManager.swift in Sources */,
 				ED1D99DC28755BA9004037EA /* SLRecordingViewController.swift in Sources */,
 				ED6EC372288B22DC00FB5E48 /* SLSignStoreManager.swift in Sources */,
@@ -458,12 +535,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDAB3B1428BD32CD00CAB0A6 /* HITabBar.swift in Sources */,
 				EDE1F07B2872FD2F00E0A497 /* ShareViewController.swift in Sources */,
+				ED40781E28BFC3A200F36569 /* ShareViewController+Image.swift in Sources */,
+				EDAB3B1A28BD331600CAB0A6 /* MenuButton.swift in Sources */,
+				EDAB3B1528BD32D100CAB0A6 /* VideoMediaInput.swift in Sources */,
+				EDAB3B1B28BD333700CAB0A6 /* RoundBorderView.swift in Sources */,
+				EDAB3B2228BE771B00CAB0A6 /* CGImageExt.swift in Sources */,
 				ED95046528AA2DB600190565 /* SLSignStoreManager.swift in Sources */,
+				EDAB3B1728BD32F000CAB0A6 /* ExtractedWordCell.swift in Sources */,
 				ED95046328AA2DB600190565 /* SLFrame+Extraction.swift in Sources */,
+				EDAB3B2F28BFB12B00CAB0A6 /* PlayerView.swift in Sources */,
+				EDAB3B1628BD32F000CAB0A6 /* PreviewViewCell.swift in Sources */,
 				ED95046128AA2DB200190565 /* SLPlayer.swift in Sources */,
+				ED40782028BFC5B100F36569 /* ShareViewController+VideoAudio.swift in Sources */,
+				EDAB3B1E28BE45C600CAB0A6 /* NLPEngine.swift in Sources */,
 				ED95046428AA2DB600190565 /* SLFrame.swift in Sources */,
 				ED95046628AA2DB600190565 /* SLRecordingManager.swift in Sources */,
+				ED0FC69328B236570065F782 /* SpeechAudio.swift in Sources */,
 				ED95046228AA2DB600190565 /* SLSentence.swift in Sources */,
 				ED95046728AA2DB600190565 /* SLSign.swift in Sources */,
 			);
@@ -643,8 +732,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeLeft;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -678,8 +767,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeLeft;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -696,6 +785,7 @@
 		EDE1F0842872FD2F00E0A497 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Photo/Photo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5778F83X4J;
@@ -703,6 +793,7 @@
 				INFOPLIST_FILE = Photo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Photo;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Transcribe Audio to Hand Sign";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -722,6 +813,7 @@
 		EDE1F0852872FD2F00E0A497 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Photo/Photo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5778F83X4J;
@@ -729,6 +821,7 @@
 				INFOPLIST_FILE = Photo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Photo;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Transcribe Audio to Hand Sign";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -776,6 +869,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDAB3B2528BF6D9E00CAB0A6 /* XCRemoteSwiftPackageReference "DSWaveformImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmrschmidt/DSWaveformImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDAB3B2628BF6D9E00CAB0A6 /* DSWaveformImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDAB3B2528BF6D9E00CAB0A6 /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			productName = DSWaveformImage;
+		};
+		EDAB3B2828BF6DE600CAB0A6 /* DSWaveformImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDAB3B2528BF6D9E00CAB0A6 /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			productName = DSWaveformImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDDBE2CD2740BA6000929EAC /* Project object */;
 }

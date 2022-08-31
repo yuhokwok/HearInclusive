@@ -565,4 +565,8 @@ extension SLRecordingViewController : SLPlayerDelegate {
         print("ended")
         
     }
+    
+    func player(_ player: SLPlayer, startPlaying word: String, at index: Int) {
+        
+    }
 }

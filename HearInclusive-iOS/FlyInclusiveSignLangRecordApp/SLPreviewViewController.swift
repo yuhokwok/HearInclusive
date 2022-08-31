@@ -73,6 +73,10 @@ class SLPreviewViewController: UIViewController , SLPlayerDelegate {
         }
     }
     
+    func player(_ player: SLPlayer, startPlaying word: String, at index: Int) {
+        
+    }
+    
     
     @IBAction func replay(){
         self.currentPlayer?.stop()
@@ -88,6 +92,8 @@ class SLPreviewViewController: UIViewController , SLPlayerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
     
     
 

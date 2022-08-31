@@ -1,24 +1,547 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j1y-V4-xli">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21223" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j1y-V4-xli">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21204"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Share View Controller-->
         <scene sceneID="ceB-am-kn3">
             <objects>
-                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModule="Photo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="wbc-yd-nQP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Things-to-do-in-Kyoto-Kinkakuji-Temple-1536x1025" translatesAutoresizingMaskIntoConstraints="NO" id="N0n-jM-pdQ" userLabel="LiveText Image View">
+                                <rect key="frame" x="0.0" y="56.999999999999986" width="390" height="243.66666666666663"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vyt-u6-noy" userLabel="Audio">
+                                <rect key="frame" x="-1" y="56.333333333333343" width="392" height="245.00000000000003"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Qg-ep-Bdn">
+                                        <rect key="frame" x="-2" y="-2" width="393" height="245"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63L-wR-sXQ">
+                                        <rect key="frame" x="8" y="15" width="380" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" red="0.087242506440000006" green="0.19243279099999999" blue="0.4109585583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mm2-uF-ETd">
+                                        <rect key="frame" x="165" y="168" width="70" height="71"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="0.087242506440000006" green="0.19243279099999999" blue="0.4109585583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="26" scale="large" weight="medium"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="35"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="playForAll" destination="j1y-V4-xli" eventType="touchUpInside" id="6LT-bJ-5PT"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZvB-LS-Wwt">
+                                        <rect key="frame" x="8" y="107" width="379" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <color key="minimumTrackTintColor" systemColor="labelColor"/>
+                                        <color key="maximumTrackTintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="thumbTintColor" red="0.075363717969999994" green="0.17162188889999999" blue="0.37430030110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Fh-a1-uXf">
+                                <rect key="frame" x="0.0" y="56.999999999999986" width="390" height="243.66666666666663"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Md-kS-CWL" customClass="PlayerView" customModule="Photo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="244"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQA-SP-DWp">
+                                        <rect key="frame" x="348" y="203" width="28" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="0.087242506440000006" green="0.19243279099999999" blue="0.4109585583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="10" scale="large" weight="medium"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="playVideoClicked" destination="j1y-V4-xli" eventType="touchUpInside" id="cVt-71-8Is"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZYN-vy-lWa">
+                                        <rect key="frame" x="13" y="204" width="327" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <color key="minimumTrackTintColor" red="0.075363717969999994" green="0.17162188889999999" blue="0.37430030110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="maximumTrackTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="thumbTintColor" red="0.075363717969999994" green="0.17162188889999999" blue="0.37430030110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-tc-y7T">
+                                <rect key="frame" x="0.0" y="407.66666666666674" width="390" height="437.33333333333326"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pr6-rD-EYs">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="437.33333333333326"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qhg-UN-GtA" userLabel="Lang Select View">
+                                            <rect key="frame" x="0.0" y="0.0" width="389" height="102"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Nn-Ng-VTH">
+                                                    <rect key="frame" x="8" y="20" width="160" height="62"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dej-3d-wGf">
+                                                            <rect key="frame" x="128" y="0.0" width="2" height="62"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" red="0.95044714210000003" green="0.94389230010000003" blue="0.94976598020000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Oj-Ly-xdA" customClass="MenuButton" customModule="Photo" customModuleProvider="target">
+                                                            <rect key="frame" x="130" y="0.0" width="30" height="62"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="tintColor" red="0.078728266059999996" green="0.45890158409999998" blue="0.77321606870000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain">
+                                                                <imageReference key="image" image="chevron.up.chevron.down" catalog="system" symbolScale="small"/>
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="semibold"/>
+                                                            </buttonConfiguration>
+                                                            <connections>
+                                                                <outlet property="associatedView" destination="SR2-zc-eg5" id="39H-Y5-dEa"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SR2-zc-eg5" userLabel="Auto detect" customClass="MenuButton" customModule="Photo" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="160" height="62"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="tintColor" red="0.14096888899999999" green="0.180778414" blue="0.3327832818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                            <menu key="menu" id="udc-7F-mxM">
+                                                                <children>
+                                                                    <command title="Item 1" id="Yj4-Wr-be1"/>
+                                                                    <command title="Item 2" id="t2b-By-p8L"/>
+                                                                </children>
+                                                            </menu>
+                                                            <state key="normal" title=" Auto detect" image="globe" catalog="system"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="15"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <outlet property="associatedView" destination="5Oj-Ly-xdA" id="Xn3-iG-YtB"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KH4-gd-CwG">
+                                                    <rect key="frame" x="221" y="20" width="159" height="62"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dL-hx-ftk" userLabel="Auto detect">
+                                                            <rect key="frame" x="0.0" y="-1" width="159" height="63"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="tintColor" red="0.14096888899999999" green="0.180778414" blue="0.3327832818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                            <menu key="menu" id="tig-J8-Zcq">
+                                                                <children>
+                                                                    <command title="Item 1" id="zoD-tH-6jn"/>
+                                                                    <command title="Item 2" id="ybw-u6-n8f"/>
+                                                                </children>
+                                                            </menu>
+                                                            <state key="normal" title="  HKSL" image="hand.raised.fill" catalog="system"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="15"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="88p-3h-iM6">
+                                                            <rect key="frame" x="125" y="-2" width="3" height="63"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" red="0.95044714210000003" green="0.94389230010000003" blue="0.94976598020000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </view>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron.up.chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SDM-gt-bhT">
+                                                            <rect key="frame" x="137" y="24.333333333333258" width="16" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="tintColor" red="0.078728266059999996" green="0.45890158409999998" blue="0.77321606870000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="heavy"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UqV-X4-0bQ">
+                                                    <rect key="frame" x="182" y="41" width="23" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="0.14096888899999999" green="0.180778414" blue="0.3327832818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u86-Yl-pee" userLabel="Live Text Result View" customClass="RoundBorderView" customModule="Photo" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="98.000000000000014" width="390" height="241.33333333333337"/>
+                                            <subviews>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ftO-9N-e2D" customClass="RoundBorderView" customModule="Photo" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="19" width="145" height="206"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Preview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmy-RV-oyd">
+                                                            <rect key="frame" x="31" y="92" width="86" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qzy-z0-4CL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="145" height="205"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </imageView>
+                                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENx-oY-Kph">
+                                                            <rect key="frame" x="8" y="157" width="40" height="40"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.133690685" green="0.44076108930000002" blue="0.7893390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="medium"/>
+                                                            </buttonConfiguration>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="20"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.94992190600000004" green="0.94990319010000002" blue="0.94689732790000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T22-dc-LN6">
+                                                    <rect key="frame" x="159" y="4" width="223" height="221"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="5" id="2i6-jR-PJT">
+                                                        <size key="itemSize" width="128" height="44"/>
+                                                        <size key="headerReferenceSize" width="50" height="15"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="ExtractTextCell" id="lSb-W8-6E1" customClass="ExtractedWordCell" customModule="Photo" customModuleProvider="target">
+                                                            <rect key="frame" x="47.666666666666664" y="15" width="128" height="44"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3pb-im-9iM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="44"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pyK-13-6ls" customClass="RoundBorderView" customModule="Photo" customModuleProvider="target">
+                                                                        <rect key="frame" x="5" y="12" width="123" height="32"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ZH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oj2-dD-dYS">
+                                                                                <rect key="frame" x="9" y="6" width="27" height="19"/>
+                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                <color key="backgroundColor" red="0.37996414299999998" green="0.37153309579999999" blue="0.41463851930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                                <color key="textColor" red="0.95936805010000004" green="0.9593494534" blue="0.95635288949999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                        <integer key="value" value="5"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="荃灣" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rz9-bM-s6y">
+                                                                                <rect key="frame" x="44" y="5" width="79" height="21"/>
+                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <color key="textColor" red="0.34574091429999998" green="0.34612578150000001" blue="0.40204125639999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="highlightedColor" red="0.34574091429999998" green="0.34612578150000001" blue="0.40204125639999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.95625370740000004" green="0.95625370740000004" blue="0.95625370740000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="10"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="2"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.95020061730000005" green="0.94692403079999998" blue="0.94985932110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBV-Ar-Fdy">
+                                                                        <rect key="frame" x="0.0" y="5" width="14" height="14"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <color key="backgroundColor" red="0.37996414299999998" green="0.37153309579999999" blue="0.41463851930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                                                        <color key="textColor" red="0.95936805010000004" green="0.9593494534" blue="0.95635288949999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="7"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                </subviews>
+                                                            </collectionViewCellContentView>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <size key="customSize" width="128" height="44"/>
+                                                            <connections>
+                                                                <outlet property="label" destination="Rz9-bM-s6y" id="1vW-cL-gkC"/>
+                                                                <outlet property="langCodeLabel" destination="oj2-dD-dYS" id="iPl-8q-Rsj"/>
+                                                                <outlet property="numberLabel" destination="rBV-Ar-Fdy" id="ppq-lJ-VQf"/>
+                                                                <outlet property="roundedRectView" destination="pyK-13-6ls" id="QkR-RX-Cou"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ExtractTextSeperator" id="hbz-IU-1n5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="223" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="xcs-IF-sDJ">
+                                                                <rect key="frame" x="-1" y="6" width="245" height="12"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </collectionReusableView>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="j1y-V4-xli" id="MsL-wE-NsY"/>
+                                                        <outlet property="delegate" destination="j1y-V4-xli" id="RU7-sB-TdI"/>
+                                                    </connections>
+                                                </collectionView>
+                                                <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SM-vJ-fR0">
+                                                    <rect key="frame" x="311" y="163" width="71" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                    <color key="backgroundColor" red="0.087242506440000006" green="0.19243279099999999" blue="0.4109585583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="text.viewfinder" catalog="system">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="26" scale="large" weight="medium"/>
+                                                    </buttonConfiguration>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="35"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="u86-Yl-pee" firstAttribute="leading" secondItem="pr6-rD-EYs" secondAttribute="leading" id="8A2-HL-lva">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                            <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                                        </constraint>
+                                        <constraint firstAttribute="bottom" secondItem="u86-Yl-pee" secondAttribute="bottom" constant="98" id="9Pb-4D-I9c"/>
+                                        <constraint firstItem="u86-Yl-pee" firstAttribute="top" secondItem="pr6-rD-EYs" secondAttribute="top" constant="98" id="Afh-qB-qio"/>
+                                        <constraint firstAttribute="trailing" secondItem="u86-Yl-pee" secondAttribute="trailing" id="Qae-KT-rLP">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                            <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                                        </constraint>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="428" id="gaQ-PI-t53"/>
+                                    <constraint firstAttribute="width" secondItem="E6d-tc-y7T" secondAttribute="height" multiplier="1:1.1" id="jTT-te-ebf"/>
+                                </constraints>
+                                <blurEffect style="extraLight"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gaQ-PI-t53"/>
+                                        <exclude reference="jTT-te-ebf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="gaQ-PI-t53"/>
+                                        <include reference="jTT-te-ebf"/>
+                                    </mask>
+                                </variation>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWC-he-Tb3">
+                                <rect key="frame" x="310" y="15" width="65" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="KU2-au-gmd"/>
+                                    <constraint firstAttribute="width" constant="65" id="Myq-5G-5pE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="dismissClicked" destination="j1y-V4-xli" eventType="touchUpInside" id="rx4-Nc-q9I"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aL9-ik-ejG">
+                                <rect key="frame" x="15" y="15" width="112" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="music.note" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zKM-jE-HHV">
+                                        <rect key="frame" x="10" y="9" width="30" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.075363717969999994" green="0.17162188889999999" blue="0.37430030110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Audio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xQ-Eq-KNp">
+                                        <rect key="frame" x="34" y="7" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1Xd-am-t49"/>
+                        <color key="backgroundColor" red="0.96078437569999997" green="0.96078437569999997" blue="0.96078437569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="1Xd-am-t49" firstAttribute="trailing" secondItem="E6d-tc-y7T" secondAttribute="trailing" id="4GF-7x-G2F"/>
+                            <constraint firstAttribute="trailing" secondItem="N0n-jM-pdQ" secondAttribute="trailing" id="8AC-dZ-FtN"/>
+                            <constraint firstItem="Vyt-u6-noy" firstAttribute="height" secondItem="N0n-jM-pdQ" secondAttribute="height" multiplier="1.00547" id="F23-92-EFq"/>
+                            <constraint firstItem="N0n-jM-pdQ" firstAttribute="width" secondItem="N0n-jM-pdQ" secondAttribute="height" multiplier="16:10" id="HzQ-Np-L5p"/>
+                            <constraint firstItem="CWC-he-Tb3" firstAttribute="top" secondItem="wbc-yd-nQP" secondAttribute="top" constant="15" id="IOx-wy-YIv"/>
+                            <constraint firstItem="5Fh-a1-uXf" firstAttribute="centerX" secondItem="N0n-jM-pdQ" secondAttribute="centerX" id="PVl-wa-eSr"/>
+                            <constraint firstItem="E6d-tc-y7T" firstAttribute="bottom" secondItem="1Xd-am-t49" secondAttribute="bottom" constant="35" id="UiN-RW-jsI"/>
+                            <constraint firstItem="E6d-tc-y7T" firstAttribute="width" secondItem="E6d-tc-y7T" secondAttribute="height" multiplier="107:120" id="Ujp-Pe-D9i"/>
+                            <constraint firstItem="1Xd-am-t49" firstAttribute="trailing" secondItem="CWC-he-Tb3" secondAttribute="trailing" constant="15" id="Wea-pS-PEU"/>
+                            <constraint firstItem="5Fh-a1-uXf" firstAttribute="width" secondItem="N0n-jM-pdQ" secondAttribute="width" id="XVQ-nd-duk"/>
+                            <constraint firstItem="Vyt-u6-noy" firstAttribute="centerY" secondItem="N0n-jM-pdQ" secondAttribute="centerY" id="csf-8h-YlO"/>
+                            <constraint firstItem="N0n-jM-pdQ" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leading" id="e3i-ke-2GP"/>
+                            <constraint firstItem="Vyt-u6-noy" firstAttribute="centerX" secondItem="N0n-jM-pdQ" secondAttribute="centerX" id="ect-td-f4H"/>
+                            <constraint firstItem="N0n-jM-pdQ" firstAttribute="top" secondItem="wbc-yd-nQP" secondAttribute="top" constant="57" id="hMs-CX-m6w"/>
+                            <constraint firstItem="Vyt-u6-noy" firstAttribute="width" secondItem="N0n-jM-pdQ" secondAttribute="width" multiplier="1.00513" id="mjH-Ut-bzL"/>
+                            <constraint firstItem="5Fh-a1-uXf" firstAttribute="height" secondItem="N0n-jM-pdQ" secondAttribute="height" id="msb-dy-8I9"/>
+                            <constraint firstItem="1Xd-am-t49" firstAttribute="leading" secondItem="E6d-tc-y7T" secondAttribute="leading" id="reF-gw-I3A"/>
+                            <constraint firstItem="5Fh-a1-uXf" firstAttribute="centerY" secondItem="N0n-jM-pdQ" secondAttribute="centerY" id="tG5-nN-XVJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="audioView" destination="Vyt-u6-noy" id="jxL-gK-VVj"/>
+                        <outlet property="collectionView" destination="T22-dc-LN6" id="g1t-VY-GCR"/>
+                        <outlet property="imageView" destination="N0n-jM-pdQ" id="H5f-6H-gpn"/>
+                        <outlet property="label" destination="63L-wR-sXQ" id="9cA-rk-m7T"/>
+                        <outlet property="mediaImageView" destination="zKM-jE-HHV" id="kPd-fA-RK9"/>
+                        <outlet property="mediaTypeLabel" destination="7xQ-Eq-KNp" id="CTg-a2-dI9"/>
+                        <outlet property="playButton" destination="Mm2-uF-ETd" id="Rod-G7-jkY"/>
+                        <outlet property="playerVideo" destination="3Md-kS-CWL" id="bYl-Al-jFB"/>
+                        <outlet property="previewImageView" destination="N0n-jM-pdQ" id="FWV-da-UV8"/>
+                        <outlet property="slImageView" destination="Qzy-z0-4CL" id="y2p-R7-kYs"/>
+                        <outlet property="videoView" destination="5Fh-a1-uXf" id="dLN-ZG-tZD"/>
+                        <outlet property="waveformImageContainer" destination="0Qg-ep-Bdn" id="ekv-OI-g8V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEy-Cv-SGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.46153846153845" y="-23.459715639810426"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Things-to-do-in-Kyoto-Kinkakuji-Temple-1536x1025" width="1536" height="1025"/>
+        <image name="arrow.right" catalog="system" width="128" height="95"/>
+        <image name="chevron.up.chevron.down" catalog="system" width="128" height="128"/>
+        <image name="globe" catalog="system" width="128" height="123"/>
+        <image name="hand.raised.fill" catalog="system" width="128" height="128"/>
+        <image name="line" width="358" height="19.333333969116211"/>
+        <image name="music.note" catalog="system" width="96" height="128"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <image name="text.viewfinder" catalog="system" width="128" height="115"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

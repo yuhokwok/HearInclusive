@@ -157,24 +157,33 @@ class VideoCapture: NSObject {
         }
 
         captureSession.addOutput(videoOutput)
-
+        
         // Update the video orientation
         if let connection = videoOutput.connection(with: .video),
-            connection.isVideoOrientationSupported {
-            connection.videoOrientation = AVCaptureVideoOrientation(deviceOrientation: UIDevice.current.orientation)
+           connection.isVideoOrientationSupported {
+            
+            DispatchQueue.main.async {
+                if let interfaceOrientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation {
+                    connection.videoOrientation = AVCaptureVideoOrientation(interfaceOrientation: interfaceOrientation)
+                } else {
+                    connection.videoOrientation = AVCaptureVideoOrientation(deviceOrientation: UIDevice.current.orientation)
+                }
+                
                 //.landscapeLeft
                 
-            //print("orientation \(UIDevice.current.orientation)")
-            connection.isVideoMirrored = cameraPostion == .front
-
-            // Inverse the landscape orientation to force the image in the upward
-            // orientation.
-            
-            if connection.videoOrientation == .landscapeLeft {
-                connection.videoOrientation = .landscapeRight
-            } else if connection.videoOrientation == .landscapeRight {
-                connection.videoOrientation = .landscapeLeft
+                //print("orientation \(UIDevice.current.orientation)")
+                connection.isVideoMirrored = self.cameraPostion == .front
+                
+                // Inverse the landscape orientation to force the image in the upward
+                // orientation.
+                
+                if connection.videoOrientation == .landscapeLeft {
+                    connection.videoOrientation = .landscapeRight
+                } else if connection.videoOrientation == .landscapeRight {
+                    connection.videoOrientation = .landscapeLeft
+                }
             }
+   
         }
     }
 

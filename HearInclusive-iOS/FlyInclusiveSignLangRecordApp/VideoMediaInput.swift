@@ -2,7 +2,7 @@
 //  VideoMediaInput.swift
 //  DiscoveryLive
 //
-//  Created by Yu Ho Kwok on 19/7/2022.
+//  Created by SAME Team on 19/7/2022.
 //
 
 import Foundation
