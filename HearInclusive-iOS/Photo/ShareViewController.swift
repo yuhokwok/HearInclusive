@@ -37,12 +37,15 @@ class ShareViewController: UIViewController, UICollectionViewDataSource, UIColle
     var sentences = [NLPSentence]()
     var signDict = [String : SLSign]()
     
+    var tapRegions = [CGRect]()
     
     var requests = [VNRequest]()
     
     @IBOutlet var audioView : UIView?
     @IBOutlet var videoView : UIView?
     @IBOutlet var imageView : UIImageView!
+    
+    var selectedSection = -1
     
     var recognitionMode : Int = 0 {
         didSet {
@@ -77,11 +80,12 @@ class ShareViewController: UIViewController, UICollectionViewDataSource, UIColle
     var recognizgedWords = [RecognizedWord]() {
         didSet{
             //TODO
-            
+            self.tapRegions.removeAll()
             self.sentences.removeAll()
             for recognizedWord in recognizgedWords {
                 let sentence = NLPEngine.shared.processForImage(recognizedWord.string!)
                 self.sentences.append(sentence)
+                //tapRegions.append(recognizedWord.boundingBox)
             }
             
             self.collectionView?.reloadData()
@@ -203,6 +207,8 @@ class ShareViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     @IBAction func playForAll(){
         print("play all sentences")
+        
+        self.selectedSection = -1
         DispatchQueue.main.async {
             self.player.play(scentences: self.sentences, signDict: self.signDict)
         }
@@ -235,6 +241,11 @@ extension ShareViewController {
     }
     
     func player(_ player: SLPlayer, startPlaying word: String, at index: Int) {
+        
+        if selectedSection != -1 {
+            self.collectionView?.selectItem(at: IndexPath(item: index, section: selectedSection), animated: true, scrollPosition: .top)
+            return
+        }
         
         let index = index
         print("play index: \(index)")
@@ -306,6 +317,7 @@ extension ShareViewController {
         let string = word.text
             
         if let frames = self.signDict[string]?.frames {
+            self.selectedSection = -1
             self.player.play(frames: frames)
             self.playButton?.isEnabled = true
         }

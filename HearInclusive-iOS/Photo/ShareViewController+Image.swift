@@ -131,9 +131,18 @@ extension ShareViewController {
             return
         }
         
-        let indexPath = IndexPath(item: gestureView.tag, section: 0)
-        self.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-        self.collectionView(self.collectionView!, didSelectItemAt: indexPath)
+        self.playSection(section: gestureView.tag)
+//        let indexPath = IndexPath(item: gestureView.tag, section: 0)
+//        self.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+//        self.collectionView(self.collectionView!, didSelectItemAt: indexPath)
+    }
+    
+    func playSection(section : Int){
+        self.selectedSection = section
+        
+        DispatchQueue.main.async {
+            self.player.play(scentences: [self.sentences[self.selectedSection]], signDict: self.signDict)
+        }
     }
 }
 
