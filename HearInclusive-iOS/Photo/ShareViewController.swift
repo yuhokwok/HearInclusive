@@ -23,7 +23,8 @@ class ShareViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet var previewImageView : UIImageView!
     @IBOutlet var slImageView : UIImageView!
     
-    @IBOutlet var playButton : UIButton?
+    @IBOutlet var playButton : [UIButton]!
+    @IBOutlet var videoProgressSlider : [UISlider]?
 
     @IBOutlet var label : UILabel?
     
@@ -38,14 +39,18 @@ class ShareViewController: UIViewController, UICollectionViewDataSource, UIColle
     var signDict = [String : SLSign]()
     
     var tapRegions = [CGRect]()
-    
     var requests = [VNRequest]()
     
     @IBOutlet var audioView : UIView?
     @IBOutlet var videoView : UIView?
     @IBOutlet var imageView : UIImageView!
     
+    var duration = -1.0
+    
     var selectedSection = -1
+    
+    @IBOutlet var statusLabel : UILabel?
+    
     
     var recognitionMode : Int = 0 {
         didSet {
@@ -134,7 +139,7 @@ class ShareViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     func fetchSignForSentences(){
-        
+        self.statusLabel?.text = "Preparing..."
         var words = [String]()
         for sentence in self.sentences {
             for word in sentence.words {
@@ -151,6 +156,9 @@ class ShareViewController: UIViewController, UICollectionViewDataSource, UIColle
                     signDict[sign.name] = sign
                 }
                 self.signDict = signDict
+                DispatchQueue.main.async {
+                    self.statusLabel?.text = "Ready"
+                }
             }
         })
     }
@@ -208,15 +216,49 @@ class ShareViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBAction func playForAll(){
         print("play all sentences")
         
-        self.selectedSection = -1
-        DispatchQueue.main.async {
-            self.player.play(scentences: self.sentences, signDict: self.signDict)
+        if self.player.isPlayering == true {
+            playerVideo.pause()
+            
+            for button in playButton {
+                button.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            }
+            //pause
+            DispatchQueue.main.async {
+                self.player.pause()
+            }
+        } else if self.player.isPause == true {
+            playerVideo.play()
+            
+            for button in playButton {
+                button.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            }
+            
+            DispatchQueue.main.async {
+                self.player.play()
+            }
+        } else {
+            
+            for button in playButton {
+                button.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            }
+            
+            //play
+            
+            try? playerVideo.player?.seek(to: .zero, toleranceBefore: .zero, toleranceAfter: .zero)
+            playerVideo.play()
+            
+            self.selectedSection = -1
+            DispatchQueue.main.async {
+                self.player.play(scentences: self.sentences, signDict: self.signDict)
+            }
         }
+        
+        
     }
 
     
     @IBAction func playVideoClicked(){
-        playerVideo.play()
+        
         self.playForAll()
     }
 
@@ -230,7 +272,9 @@ class ShareViewController: UIViewController, UICollectionViewDataSource, UIColle
 
 extension ShareViewController {
     func playerDidEndPlayback(_ player: SLPlayer) {
-        
+        for button in self.playButton {
+            button.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        }
     }
     
     func player(_ player: SLPlayer, didOutputFrame frame: SLFrame) {
@@ -319,7 +363,10 @@ extension ShareViewController {
         if let frames = self.signDict[string]?.frames {
             self.selectedSection = -1
             self.player.play(frames: frames)
-            self.playButton?.isEnabled = true
+            
+            for button in self.playButton {
+                button.isEnabled = true
+            }
         }
     }
 }

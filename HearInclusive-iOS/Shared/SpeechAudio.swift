@@ -44,11 +44,12 @@ class AudioSpeechAnalyser {
         } else {
             print("not on device")
         }
-        if #available(iOSApplicationExtension 16, *) {
+        
+        if #available(iOSApplicationExtension 16, iOS 16, *) {
             request.addsPunctuation = true
             print("auto punctuation")
         } else {
-            // Fallback on earlier versions
+            
         }
         
       // 3

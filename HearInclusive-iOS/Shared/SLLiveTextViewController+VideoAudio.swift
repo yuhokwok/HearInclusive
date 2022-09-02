@@ -1,19 +1,18 @@
 //
-//  ShareViewController+VideoAudio.swift
+//  SLLiveTextViewController+VideoAudio.swift
 //  Photo
 //
 //  Created by Yu Ho Kwok on 1/9/2022.
 //
 
-import Foundation
 import NaturalLanguage
 import MobileCoreServices
 import Speech
 import DSWaveformImage
 import UIKit
 
-extension ShareViewController {
-    
+
+extension SLLiveTextViewController {
     
     
     func processForAudio(url : URL) {
@@ -41,13 +40,14 @@ extension ShareViewController {
         //playerVideo.play()
         
     }
+    
 }
 
 
-extension ShareViewController : AudioSpeechAnalyserDelegate {
+extension SLLiveTextViewController : AudioSpeechAnalyserDelegate {
     func audioSpeechAnalyser(_ analyser: AudioSpeechAnalyser, didOutput text: String, isFinal: Bool) {
         DispatchQueue.main.async {
-            if self.recognitionMode == 0 {
+            if self.mediaRecognitionMode == 0 {
                 self.handleAudio(text: text, isFinal: isFinal)
             } else {
                 self.handleVideo(text: text, isFinal: isFinal)
@@ -99,8 +99,7 @@ extension ShareViewController : AudioSpeechAnalyserDelegate {
     }
 }
 
-
-extension ShareViewController : PlayerViewDelegate {
+extension SLLiveTextViewController  : PlayerViewDelegate {
     func playerVideo(player: PlayerView, statusItemPlayer: PVItemStatus, error: Error?) {
         
     }
@@ -134,7 +133,8 @@ extension ShareViewController : PlayerViewDelegate {
     }
 }
 
-extension ShareViewController {
+
+extension SLLiveTextViewController {
     func extractAudio(url : URL){
         // Create a composition
         let composition = AVMutableComposition()

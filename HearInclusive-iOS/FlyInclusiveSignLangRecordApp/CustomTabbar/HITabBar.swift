@@ -8,11 +8,37 @@
 import UIKit
 
 protocol HITabBarDelegate {
-    func hiTabBar(_ tabBar : HITabBar, didSelecteIndex : Int)
+    func hiTabBar(_ tabBar : HITabBar, didSelecteIndex : Int, from oldIndex : Int)
 }
 
 class HITabBar : UIView {
-    var selectedIndex = 0
+    var selectedIndex = 0 {
+        didSet {
+            for tabImageView in tabImageViews {
+                if tabImageView.tag == selectedIndex {
+                    tabImageView.alpha = 1
+                } else {
+                    tabImageView.alpha = 0
+                }
+            }
+            
+            for tabIconView in tabIconViews {
+                if tabIconView.tag == selectedIndex {
+                    tabIconView.tintColor = #colorLiteral(red: 0.07536371797, green: 0.1716218889, blue: 0.3743003011, alpha: 1)
+                } else {
+                    tabIconView.tintColor = .gray
+                }
+            }
+            
+            for tabTitle in tabTitles {
+                if tabTitle.tag == selectedIndex {
+                    tabTitle.textColor = #colorLiteral(red: 0.07536371797, green: 0.1716218889, blue: 0.3743003011, alpha: 1)
+                } else {
+                    tabTitle.textColor = .gray
+                }
+            }
+        }
+    }
     
     var delegate : HITabBarDelegate?
     
@@ -27,32 +53,9 @@ class HITabBar : UIView {
             return
         }
         
+        let oldIndex = selectedIndex
         selectedIndex = tag
-        self.delegate?.hiTabBar(self, didSelecteIndex: selectedIndex)
-        
-        for tabImageView in tabImageViews {
-            if tabImageView.tag == tag {
-                tabImageView.alpha = 1
-            } else {
-                tabImageView.alpha = 0
-            }
-        }
-        
-        for tabIconView in tabIconViews {
-            if tabIconView.tag == tag {
-                tabIconView.tintColor = #colorLiteral(red: 0.07536371797, green: 0.1716218889, blue: 0.3743003011, alpha: 1)
-            } else {
-                tabIconView.tintColor = .gray
-            }
-        }
-        
-        for tabTitle in tabTitles {
-            if tabTitle.tag == tag {
-                tabTitle.textColor = #colorLiteral(red: 0.07536371797, green: 0.1716218889, blue: 0.3743003011, alpha: 1)
-            } else {
-                tabTitle.textColor = .gray
-            }
-        }
+        self.delegate?.hiTabBar(self, didSelecteIndex: selectedIndex, from: oldIndex)
     }
     
 }

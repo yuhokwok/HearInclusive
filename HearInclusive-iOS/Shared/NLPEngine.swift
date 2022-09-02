@@ -115,8 +115,10 @@ struct NLPEngine {
             let subString = text[r]
             
             if let t = t {
-                let word = NLPWord(text: "\(subString)", tag: t)
-                sentence.words.append(word)
+                if t != .punctuation && t != .otherPunctuation {
+                    let word = NLPWord(text: "\(subString)", tag: t)
+                    sentence.words.append(word)
+                }
             }
         }
         return sentence

@@ -34,8 +34,12 @@ class SLPlayer {
 
     var queue : [String] = []
     
+    var isPause = false
+    var isPlayering = false
     
     func play(scentences : [NLPSentence], signDict : [String : SLSign]) {
+        isPlayering = true
+        isPause = false
         queue.removeAll()
         self.signDict = signDict
         for scentence in scentences {
@@ -115,7 +119,37 @@ class SLPlayer {
         })
     }
     
+    func pause() {
+        isPause = true
+        isPlayering = false
+        timer?.invalidate()
+
+    }
+    
     func play(){
+        
+        if isPause == true {
+            isPause = false
+            isPlayering = true
+            
+            timer = Timer.scheduledTimer(withTimeInterval: 0.025, repeats: true, block: {
+                timer in
+                
+                let frame = self.frames![self.currentFrameIndex]
+                self.delegate?.player(self, didOutputFrame: frame)
+                
+                self.currentFrameIndex += 1
+                if self.currentFrameIndex == self.frames!.count {
+                    
+                    print("try to play next in queue")
+                    self.playNextInQuene()
+                    
+                }
+            })
+            
+            return
+        }
+        
         guard let frames = self.frames else {
             return
         }
@@ -123,6 +157,8 @@ class SLPlayer {
     }
     
     func stop() {
+        isPause = false
+        isPlayering = false
         currentFrameIndex = 0
         timer?.invalidate()
         self.delegate?.playerDidEndPlayback(self)
