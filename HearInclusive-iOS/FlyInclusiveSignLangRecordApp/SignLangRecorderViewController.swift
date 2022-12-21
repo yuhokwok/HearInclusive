@@ -25,6 +25,8 @@ class SignLangRecorderViewController : UIViewController, UITextFieldDelegate, RP
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        
+      
     }
     
     @IBAction func recordButtonClick(_ sender : Any){
